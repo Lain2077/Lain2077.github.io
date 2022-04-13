@@ -1,137 +1,110 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link type="text/css" id="dark-mode" rel="stylesheet" href="./password_files/login.html"><style type="text/css" id="dark-mode-custom-style"></style>
-<script language="javascript">
-<!--//
-/*This Script allows people to enter by using a form that asks for a
-UserID and Password*/
-function swagman(form) { 
-if (form.code.value=="Accela") {             
-location = "onagoodpath.html"
-} else {
-alert("Invalid Code")
-}
-}
-//-->
-</script>
-<script language="javascript">
-window.onload=function(){var e=document.createElement("div");e.setAttribute("id","sellix-container"),document.getElementsByTagName("body")[0].appendChild(e),setTimeout(function e(t){if(document.querySelector("[data-sellix-product]")&&!t){SellixButtons=document.querySelectorAll("[data-sellix-product]");for(var n=0;n<SellixButtons.length;n++)SellixButtons[n].addEventListener("click",function(e){console.log("Sellix Product ID: ",e.target.getAttribute("data-sellix-product"));for(var t,n=e.target.getAttribute("data-sellix-product"),l="?",i=0,o=e.target.attributes,a=o.length;i<a;i++)(t=o[i]).nodeName.indexOf("data-sellix-custom")>-1&&(l+=t.nodeName.replace("data-sellix-custom-","")+"="+t.nodeValue+"&");var r,d="https://embed.sellix.io/product/"+n+l,s='<div class="sellix-fallback-button-container"><a class="sellix-fallback-button" href="'+d+'" target="_blank" >Go to product</a></div>';(r=document.createElement("div")).setAttribute("id","sellix-modal-"+n),r.setAttribute("style","display:none; position:fixed; top: 0; left:0; width: 100%; height:100%; z-index:-1050"),r.innerHTML='<div id="backdrop" class="sellix-backdrop"></div><style>.sellix-iframe {\n    width:100%;\n    height:100%;\n    border:none;\n}\n\n.sellix-iframe-content {\n    height: 100%;\n}\n\n.sellix-iframe-wrapper {\n    top:20px;\n    margin:auto;\n    width: 100%;\n    height:100%;\n    z-index: 1;\n}\n\n.sellix-iframe-loader-container {\n    z-index: 1;\n    position: absolute;\n    top: 30%;\n    left: 50%;\n    transform: translate(-50%);\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n\n.sellix-backdrop {\n    background: #00000075;\n    backdrop-filter: blur(3px);\n    width:100%;\n    height:100%;\n    position:absolute;\n}\n\n.sellix-fallback-button {\n    font-family: "Open Sans";\n    font-size: 14px;\n    font-weight: 600;\n    color: black;\n    text-decoration: none;\n}\n\n.sellix-fallback-button-container {\n    position: absolute;\n    z-index: 2;\n    display: none;\n    top: 50%;\n    height: 50px;\n    line-height: 40px;\n    max-height: 50px;\n    box-sizing: border-box;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    background: #613bea;\n    padding: .375rem .75rem;\n    border-radius: 3px;\n}</style><div class="sellix-iframe-loader-container"><img src="https://cdn.sellix.io/static/logo/single.svg" alt="Loader" class="sellix-iframe-loader" style="width: 35px;" /></div>'+s+'<div class="sellix-iframe-wrapper"><div class="sellix-iframe-content"><iframe scrolling="auto" src="'+d+'" class="sellix-iframe" id="sellix-iframe" onerror="(e) => console.log(e)"></div></div>',document.getElementById("sellix-container").appendChild(r),(r=document.getElementById("sellix-modal-"+n)).style.display="flex",r.style.zIndex="99999",document.querySelector("#sellix-iframe").addEventListener("load",function(e){document.querySelector(".sellix-iframe-loader").style.display="none"}),document.querySelector("#sellix-iframe").addEventListener("error",function(e){document.querySelector(".sellix-iframe-loader").style.display="none",document.querySelector(".sellix-fallback-button-container").style.display="flex"}),window.addEventListener("message",function(e){"close-embed"==e.data&&(r.style.display="none",r.style.zIndex="-1050",r.parentNode.removeChild(r)),console.log(e)},!1)});t=!0}document.querySelector("[data-sellix-product]")||(t=!1),setTimeout(e,100,t)},100,!1)};
-</script>
-<style>
-.myDiv {
-  border: 2px outset #c1b492;
-  width: 400px;
-  margin: auto;
-  color:#c1b492;
-  background-color: transparent;    
-  text-align: center;
-}
-</style>
+<html>
 
-<link href="https://cdn.sellix.io/static/css/embed.css" rel="stylesheet" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A place in nowhere to be found">
+    <meta name="keywords" content="personal, cyberpunk, vaporwave, programming, art">
+    <meta name="author" content="al1-ce">
+    <title> /// </title>
+    <link rel="icon" href="images/logo.gif">
 
-<script language="javascript">
-if (window.location.href.indexOf('?code=Accela') > 0) {
-    location = "onagoodpath.html"
-}
-</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="lib/jquery.iframetracker.min.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/atheos.js"></script>
+    <script src="js/themes.js"></script>
 
-<title>L A I N</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/oc-style.css">
+	<link rel="stylesheet" type="text/css" href="css/theme-old.css">
 
-<link rel="icon"href="./icon.ico" sizes="64x64">
-<link rel="icon" href="./icon.ico" sizes="32x32">
-<link rel="icon" href="./icon.ico" sizes="16x16">
-
-<link rel="stylesheet" type="text/css" href="./stylesheetLogin.css">
+    <script>
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            window.open('mobile.html', '_self');
+        }
 
 
+        var theme = getCurrentTheme();
+
+        // $('head').append('<link rel="stylesheet" type="text/css" href="css/theme-new.css">');
+        // $('head').append('<link rel="stylesheet" type="text/css" href="css/theme-old.css">');
+    </script>
 </head>
 
 <body>
-<div class="wiredGang">
-<div class="darker">
-<div class="dark">
+    <div id="loader" style="display:none;">
+        <h1 class="glitch" data-text="AtheOS">AtheOS</h1>
+        <h2 class="glitch" data-text="time waits for noone">time waits for noone</h2>
+    </div>
+    <audio id="snd-boot">
+			<source src="sounds/mp3/bootup.mp3" type="audio/mpeg">
+			<source src="sounds/ogg/bootup.ogg" type="audio/ogg">
+		</audio>
+    <audio id="snd-loaded">
+			<source src="sounds/mp3/loaded.mp3" type="audio/mpeg">
+			<source src="sounds/ogg/loaded.ogg" type="audio/ogg">
+		</audio>
 
-<div class="opacity">
+    <script>
+        let bootsnd = document.getElementById("snd-boot");
+        let loadsnd = document.getElementById("snd-loaded");
 
-<div class="opacityContent">
-<h1 id="intro">L A I N</h1>
-<hr>
-<h2 class="jp">⌈玲音⌋</h2>
+        let doBoot = getOrInitCookie("doBoot", "1");
+        if (doBoot == "1") {
+            $('#loader').show();
+            bootsnd.volume = 0.5;
+            loadsnd.volume = 0.5;
+            bootsnd.play();
+            setTimeout(() => {
+                $('#loader').hide();
+                loadsnd.play();
+            }, 1000 * 6);
+        }
+    </script>
 
+    <div id="scanlines"></div>
 
+    <div id="page">
 
-<div class="myDiv">
-<h3>Dominos Canada</h3>
-<table>
-<tbody>
-<tr>
-<td>60 pts - $1 USD</td>
-<td><button class="button" data-sellix-product="6068993fc1fab" type="submit" alt="Buy Now with Sellix.io">Buy</button></td>
-</tr>
-<tr>
-<td>120 pts - $2 USD</td>
-<td><button class="button" data-sellix-product="6068995d51248" type="submit" alt="Buy Now with Sellix.io">Buy</button></td>
-</tr>
-<tr>
-<td>180+ pts - $3 USD</td>
-<td><button class="button" data-sellix-product="606899a805af3" type="submit" alt="Buy Now with Sellix.io">Buy</button></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p style="font-size:18px;letter-spacing:normal">For any business partnering, custom requests or questions:</p>
-<p style="font-size:13px;letter-spacing:normal">Telegram: @CuteLain</p>
-<p style="font-size:13px;letter-spacing:normal">Discord: LAIN#4535</p>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-    <br>
-    <p style="font-size:13px;letter-spacing:normal">When humans will be merged with machines, Humanity's peak will be reached</p>
-<b s>--Lain--</b>
-
-</div>
+ <h1>Earth's <br/> last <br/> computer</h1>
+ <h5> Take care of me! I have the left overs of Internet as it was before human extinction </h5>
+        <script>
+            if (theme == "0") {
+                loadWallpaper();
+            }
+        </script>
+    </div>
+    <!-- END OF PAGE -->
 
 
+    <!-------------------------------------TECH-------------------------------------------->
+    <audio id="snd-st-d-0" loop>
+			<source src="sounds/mp3/mystory.mp3" type="audio/mpeg">
+			<source src="sounds/ogg/mystory.ogg" type="audio/ogg">
+		</audio>
+    <audio id="snd-st-d-1" loop>
+			<source src="sounds/mp3/mystory_d1.mp3" type="audio/mpeg">
+			<source src="sounds/ogg/mystory_d1.ogg" type="audio/ogg">
+		</audio>
+    <audio id="snd-st-d-2" loop>
+			<source src="sounds/mp3/mystory_d2.mp3" type="audio/mpeg">
+			<source src="sounds/ogg/mystory_d2.ogg" type="audio/ogg">
+		</audio>
+    <audio id="snd-st-d-3" loop>
+			<source src="sounds/mp3/mystory_d3.mp3" type="audio/mpeg">
+			<source src="sounds/ogg/mystory_d3.ogg" type="audio/ogg">
+		</audio>
 
-<audio loop="on" autoplay="on">
-  <source src="https://web.opendrive.com/api/v1/download/file.json/NjVfMzkxMDI0NTVf?inline=1" type="audio/mpeg">
-</audio>
+    <script>
+        document.getElementById("snd-st-d-0").volume = 0.15;
+        document.getElementById("snd-st-d-1").volume = 0.15;
+        document.getElementById("snd-st-d-2").volume = 0.15;
+        document.getElementById("snd-st-d-3").volume = 0.15;
+    </script>
 
+</body>
 
-</div>
-</div>
-</div>
-</div>
-
-
-</body></html>
+</html>
