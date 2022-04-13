@@ -49,7 +49,7 @@ $(document).ready(function() {
     addIconEmpty(5);
 	
     addLine();
-	addIcon('about.html', 'layer', `C:/computer/about.bat`, `images/oc-img/about.PNG`, 'About', 4);
+	addIcon('about.html', 'layer', `C:/computer/about.bat`, `images/oc-img/about.png`, 'About', 4);
     addIcon('anatomy.html', 'layer', `C:/LastLine/communication.bat`, `images/oc-img/comm.png`, 'Are you human?', 4);
 	addIcon('verdict.html', 'layer', `C:/Krita Project/verdict.html`, `images/oc-img/gov.png`, 'Gov Files Leak', 4);
 	addLine();
