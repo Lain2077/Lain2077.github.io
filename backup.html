@@ -1,0 +1,86 @@
+<html><head>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title> [ todo ] </title>
+		<link rel="icon" href="/images/logo.gif">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="lib/purejs-markdown.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.4">
+
+		<link rel="stylesheet" type="text/jcss" href="css/main.css">
+		
+		<script>
+		var currentCallback;
+
+// override default browser alert
+window.alert = function(msg, callback){
+  $('.message').text(msg);
+  $('.customAlert').css('animation', 'fadeIn 0.3s linear');
+  $('.customAlert').css('display', 'inline');
+  setTimeout(function(){
+    $('.customAlert').css('animation', 'none');
+  }, 300);
+  currentCallback = callback;
+}
+
+$(function(){
+  
+  // add listener for when our confirmation button is clicked
+  $('.confirmButton').click(function(){
+    $('.customAlert').css('animation', 'fadeOut 0.3s linear');
+    setTimeout(function(){
+     $('.customAlert').css('animation', 'none');
+    $('.customAlert').css('display', 'none');
+    }, 300);
+    currentCallback();
+  })
+  
+  $('.rab').click(function(){
+    alert("Not enough space!", function(){
+      console.log("Callback executed");
+    })
+  });
+  
+  // our custom alert box
+
+});
+		</script>
+		<style>
+			body { background: black; color: white; text-align: center; padding: 1px;}
+            .notes {text-align: left;}
+		</style>
+	<style>.pjs-markdown-parsed a{color:#428bca;text-decoration:none}.pjs-markdown-parsed a:focus,.pjs-markdown-parsed a:hover{color:#2a6496;text-decoration:underline}.pjs-markdown-parsed strong{font-weight:700}.pjs-markdown-parsed em{font-style:italic}.pjs-markdown-parsed s{text-decoration:line-through}.pjs-markdown-parsed blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #eee}.pjs-markdown-parsed code{padding:2px 4px;font-size:90%;color:#0c0c0b;background-color:#f9f2f4;border-radius:4px}.pjs-markdown-parsed pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px}.pjs-markdown-parsed pre code{padding:0;font-size:inherit;color:inherit;white-space:pre;background-color:transparent;border-radius:0}.pjs-markdown-parsed mark{padding:.2em;background-color:#fcf8e3}.pjs-markdown-parsed table{max-width:100%;margin-bottom:20px}.pjs-markdown-parsed table{border-spacing:0;border-collapse:collapse;background-color:#f9f9f9}.pjs-markdown-parsed table tr:nth-child(even){background-color:#f5f5f5}.pjs-markdown-parsed table tr th{vertical-align:bottom;border-bottom:2px solid #ddd;font-weight:700;padding:8px;line-height:1.42857143;background-color:#f9f9f9}.pjs-markdown-parsed table tr td{padding:8px;line-height:1.42857143;vertical-align:top;border-top:1px solid #ddd}</style><style>.pjs-markdown-parsed a{color:#428bca;text-decoration:none}.pjs-markdown-parsed a:focus,.pjs-markdown-parsed a:hover{color:#2a6496;text-decoration:underline}.pjs-markdown-parsed strong{font-weight:700}.pjs-markdown-parsed em{font-style:italic}.pjs-markdown-parsed s{text-decoration:line-through}.pjs-markdown-parsed blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #eee}.pjs-markdown-parsed code{padding:2px 4px;font-size:90%;color:#0c0c0b;background-color:#f9f2f4;border-radius:4px}.pjs-markdown-parsed pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px}.pjs-markdown-parsed pre code{padding:0;font-size:inherit;color:inherit;white-space:pre;background-color:transparent;border-radius:0}.pjs-markdown-parsed mark{padding:.2em;background-color:#fcf8e3}.pjs-markdown-parsed table{max-width:100%;margin-bottom:20px}.pjs-markdown-parsed table{border-spacing:0;border-collapse:collapse;background-color:#f9f9f9}.pjs-markdown-parsed table tr:nth-child(even){background-color:#f5f5f5}.pjs-markdown-parsed table tr th{vertical-align:bottom;border-bottom:2px solid #ddd;font-weight:700;padding:8px;line-height:1.42857143;background-color:#f9f9f9}.pjs-markdown-parsed table tr td{padding:8px;line-height:1.42857143;vertical-align:top;border-top:1px solid #ddd}</style><style>.pjs-markdown-parsed a{color:#428bca;text-decoration:none}.pjs-markdown-parsed a:focus,.pjs-markdown-parsed a:hover{color:#2a6496;text-decoration:underline}.pjs-markdown-parsed strong{font-weight:700}.pjs-markdown-parsed em{font-style:italic}.pjs-markdown-parsed s{text-decoration:line-through}.pjs-markdown-parsed blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #eee}.pjs-markdown-parsed code{padding:2px 4px;font-size:90%;color:#0c0c0b;background-color:#f9f2f4;border-radius:4px}.pjs-markdown-parsed pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px}.pjs-markdown-parsed pre code{padding:0;font-size:inherit;color:inherit;white-space:pre;background-color:transparent;border-radius:0}.pjs-markdown-parsed mark{padding:.2em;background-color:#fcf8e3}.pjs-markdown-parsed table{max-width:100%;margin-bottom:20px}.pjs-markdown-parsed table{border-spacing:0;border-collapse:collapse;background-color:#f9f9f9}.pjs-markdown-parsed table tr:nth-child(even){background-color:#f5f5f5}.pjs-markdown-parsed table tr th{vertical-align:bottom;border-bottom:2px solid #ddd;font-weight:700;padding:8px;line-height:1.42857143;background-color:#f9f9f9}.pjs-markdown-parsed table tr td{padding:8px;line-height:1.42857143;vertical-align:top;border-top:1px solid #ddd}</style><style type="text/css"></style></head>
+	
+	<body>
+        <div class="pjs-markdown-parsed" style="text-align: left;">
+	
+            <h2 style="font-weight: bold; text-align: center; margin: 2%; font-size: 35px; color: #d2738a;">Backup by Celexa</h2><hr>
+            <h2 style="text-align: center;">As a last potential gift to humanity, the anarchist cybercrime team Celexa extracted humanity's cerebral network database from the government servers, having in mind that some technologies might eventually be able to bring us back. We truly feel sorry for every single humans who suffered until the very end from authorities visciousness and inconsideration.</h3>
+			<br/>
+			<h2 style="text-align: center;"> -Celexa</h2>
+        </div>
+        <div class="pjs-markdown-parsed" style="text-align: left;"><hr>
+		</br>
+		<div class='customAlert'>
+  <p class='message'></p>
+  <input type='button' class='confirmButton' value='Ok'>
+</div>
+</div>
+<input type='button' class='rab' value='Download'>
+	
+		<h2 style="text-align: center; font-size: 16; letter-spacing: 2px; margin-top: auto;"> (Size: 265 Zetabytes)</h2>
+			<h2 style="text-align: center;"><img src="images/backup.gif" style="text-align: center; height:50%;"></h2>
+
+        <script>
+            jConvertMarkdown();
+            // jConvertMarkdown();
+        </script>
+        <style>
+            .pjs-markdown-parsed code {
+                background-color: #0c0c0b;
+                color: #f9f2f4;
+            }
+        </style>
+	
+
+</body></html>
