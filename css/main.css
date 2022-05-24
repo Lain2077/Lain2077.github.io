@@ -1,0 +1,483 @@
+@font-face {
+    font-family: 'Kosugi';
+    src: url("../fonts/Kosugi-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Cynatar';
+    src: url("../fonts/Cynatar.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Techno';
+    src: url("../fonts/TechnoBoard.ttf") format('truetype');
+}
+
+body {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #070707;
+    font-family: 'Courier';
+    font-weight: normal;
+    text-align: center;
+    line-height: 1;
+    color: #f4f1e8;
+    letter-spacing: 5px;
+    margin: 0 auto;
+}
+:root {
+--neon-text-color: #ff036c;
+}
+
+/*Animation*/
+
+h1::-moz-selection {
+  color: var(--neon-text-color);
+}
+
+h1::selection {
+  color: var(--neon-text-color);
+}
+
+h1:focus {
+  outline: none;
+}
+
+/* Animate neon flicker */
+@keyframes flicker {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-text-color),
+            0 0 4rem var(--neon-text-color),
+            0 0 6rem var(--neon-text-color),
+            0 0 8rem var(--neon-text-color),
+            0 0 10rem var(--neon-text-color);
+        
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-border-color),
+            inset 0 0 2rem var(--neon-border-color),
+            0 0 4rem var(--neon-border-color),
+            inset 0 0 4rem var(--neon-border-color);        
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
+}
+/* Text decoration */
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+	color: white;
+	font-size: 23px;
+    margin-top: 2%;
+    margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+50% {
+    color: #d2738a;
+    text-shadow: #d2738a 1px 4px 5px;
+}
+
+
+h1 {
+	animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-size: 73px;
+    letter-spacing: 9px;
+    font-weight: normal;
+    margin-top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+	font-family: Techno;
+	color: #d2738a;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 12px;
+}
+
+h5 {
+    font-size: 23px;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #070707;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f4f1e8;
+}
+
+::-webkit-scrollbar-corner {
+    background: #070707;
+}
+
+/* Class controls */
+
+.hide {
+    display: none;
+}
+
+.button {
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button:active {
+    border: none;
+    box-shadow: none;
+}
+
+.glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left: 2px;
+    text-shadow: -2px 0 #ff0040;
+    clip: rect(10%, 100%, 13%, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff0040;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+
+@keyframes textflicker {
+  from {
+    text-shadow: 3px 0 0 #0ffbf9, -3px 0 0 #cc0f39;
+  }
+  to {
+    text-shadow: 3px -0.5px 2px #0ffbf9, -1px -0.5px 3px #cc0f39;
+  }
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(7px, 9999px, 101px, 0);
+    }
+    5% {
+        clip: rect(95px, 9999px, 168px, 0);
+    }
+    10% {
+        clip: rect(62px, 9999px, 58px, 0);
+    }
+    15% {
+        clip: rect(153px, 9999px, 164px, 0);
+    }
+    20% {
+        clip: rect(89px, 9999px, 231px, 0);
+    }
+    25% {
+        clip: rect(187px, 9999px, 225px, 0);
+    }
+    30% {
+        clip: rect(201px, 9999px, 230px, 0);
+    }
+    35% {
+        clip: rect(243px, 9999px, 75px, 0);
+    }
+    40% {
+        clip: rect(88px, 9999px, 194px, 0);
+    }
+    45% {
+        clip: rect(223px, 9999px, 117px, 0);
+    }
+    50% {
+        clip: rect(173px, 9999px, 122px, 0);
+    }
+    55% {
+        clip: rect(4px, 9999px, 66px, 0);
+    }
+    60% {
+        clip: rect(79px, 9999px, 42px, 0);
+    }
+    65% {
+        clip: rect(220px, 9999px, 178px, 0);
+    }
+    70% {
+        clip: rect(39px, 9999px, 74px, 0);
+    }
+    75% {
+        clip: rect(196px, 9999px, 211px, 0);
+    }
+    80% {
+        clip: rect(167px, 9999px, 128px, 0);
+    }
+    85% {
+        clip: rect(2px, 9999px, 106px, 0);
+    }
+    90% {
+        clip: rect(14px, 9999px, 47px, 0);
+    }
+    95% {
+        clip: rect(8px, 9999px, 38px, 0);
+    }
+    100% {
+        clip: rect(37px, 9999px, 143px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(109px, 9999px, 149px, 0);
+    }
+    5% {
+        clip: rect(44px, 9999px, 217px, 0);
+    }
+    10% {
+        clip: rect(145px, 9999px, 101px, 0);
+    }
+    15% {
+        clip: rect(63px, 9999px, 117px, 0);
+    }
+    20% {
+        clip: rect(108px, 9999px, 126px, 0);
+    }
+    25% {
+        clip: rect(173px, 9999px, 159px, 0);
+    }
+    30% {
+        clip: rect(28px, 9999px, 31px, 0);
+    }
+    35% {
+        clip: rect(137px, 9999px, 76px, 0);
+    }
+    40% {
+        clip: rect(49px, 9999px, 183px, 0);
+    }
+    45% {
+        clip: rect(64px, 9999px, 155px, 0);
+    }
+    50% {
+        clip: rect(214px, 9999px, 158px, 0);
+    }
+    55% {
+        clip: rect(122px, 9999px, 232px, 0);
+    }
+    60% {
+        clip: rect(241px, 9999px, 225px, 0);
+    }
+    65% {
+        clip: rect(129px, 9999px, 107px, 0);
+    }
+    70% {
+        clip: rect(79px, 9999px, 148px, 0);
+    }
+    75% {
+        clip: rect(90px, 9999px, 156px, 0);
+    }
+    80% {
+        clip: rect(244px, 9999px, 9px, 0);
+    }
+    85% {
+        clip: rect(64px, 9999px, 43px, 0);
+    }
+    90% {
+        clip: rect(218px, 9999px, 39px, 0);
+    }
+    95% {
+        clip: rect(238px, 9999px, 35px, 0);
+    }
+    100% {
+        clip: rect(32px, 9999px, 104px, 0);
+    }
+}
+
+/* Custom elements */
+
+.block {
+    background-color: #070707;
+    width: 55%;
+    height: auto;
+    margin: 35px auto 10px auto;
+    padding: 1px;
+}
+
+.roww {
+  margin-left: 2%;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.columnn {
+  -ms-flex: 32%; /* IE10 */
+  flex: 32%;
+  max-width: 32%;
+  padding: 0 4px;
+}
+
+.columnn img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.customAlert {
+  display: none;
+  position: fixed;
+  height: 180px;
+  width: 500px;
+  left: 50%;
+  top: 50%;
+  padding: 45px;
+  box-sizing: border-box;
+  margin-top: -90px;  /* Negative half of height. */
+  margin-left: -250px;
+  outline: 3px ridge #BC748B;
+  background: black;
+}
+@media all and (max-width: 1300px) {
+  .customAlert .message {
+    font-size: 30px !important;
+	font-weight: bold;
+	font-family: 'Times New Roman';
+  }
+  .customAlert input[type=button] {
+    height: 15% !important;
+  }
+}
+.customAlert .message {
+  margin-top: 10px;
+  padding: 0px;
+  color: #BC748B;
+  font-size: 30px;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+}
+.customAlert input[type=button] {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 50%;
+  height: 36px;
+  margin-top: -62px;
+  margin-left: -25%;
+  outline: 1;
+  border: 0;
+  outline: 3px solid #9C738A;
+  background: black;
+  color: #9C738A;
+}
+.customAlert input[type=button]:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  background: #BC748B;
+  
+}
+
+.rab {
+  width: 245px;
+  height: 45px;
+  font-family: 'Times New Roman';
+  outline: 0;
+  margin-bottom: 1%;
+  font-size: 35px;
+  font-weight: bold;
+  border: 1;
+  text-align: center;
+  border-color: #BC748B;
+  color: #BC748B;
+  background: black;
+}
+
+.input {
+ margin-top: 2%;
+ margin-bottom: 5px;
+ margin-left: auto;
+ margin-right: auto;
+ font-weight: bold;
+ text-align: center;
+ font-size: 35px; 
+ color: #d2738a;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
