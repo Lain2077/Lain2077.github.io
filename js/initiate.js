@@ -289,7 +289,7 @@ class AWindow {
         $window.css({
             position: 'absolute',
             top: 8 + (winIndex.length * 2) + '%',
-            left: 12 + (winIndex.length * 2) + '%'
+            left: 8.5 + '%'
         });
         let frameId = this.url.includes('?') ? `&id=${this.id}` : `?id=${this.id}`;
         $window.append(`<div class="win-bar"> 
@@ -333,7 +333,7 @@ class AWindow {
         let $window = $('#win-id-' + this.id);
         $window.css({
             position: 'absolute',
-            width: w,
+            width: '85%',
             height: h
         });
     }
