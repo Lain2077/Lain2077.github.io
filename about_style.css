@@ -14,10 +14,6 @@
 
 /*GRID - WELCOME*/
 
-.li {
-	padding-bottom: 15%;
-}
-
 .welcome {
     display: grid;
 	background: #b9a1b0 url("art/pixels/pinkstarsky.gif") fixed repeat;
@@ -196,9 +192,9 @@
 
 .home-main {
     display: grid;
-	background: #b9a1b0 url("art/pixels/space.jpg") fixed repeat;
+	background: #b9a1b0 url("art/pixels/pinkstarsky.gif") fixed repeat;
     grid-template-columns: 27% 825px auto;
-    grid-template-rows: 50px 50px auto 50px;
+    grid-template-rows: 250px 50px auto 50px;
 	grid-gap: 40px 0;
     grid-template-areas: 
 	"info title ."
@@ -209,9 +205,9 @@
 
 
 .title {
-	padding-top: 0px;
 	grid-area: title;
 	justify-self: center;
+	align-self: end;
 	z-index: 1;
 }
 
@@ -231,7 +227,9 @@
 /*Home Navbar*/
 
 ul.sidenav {
+  position: fixed;
   max-width: 35vw;
+  margin: 20vh auto auto 6%;
   padding: 0 15px 30px;
   background-image: 
   
@@ -358,29 +356,24 @@ ul.sidenav {
 }
 
 .sidenav-buttons {
-	margin: 50px -15px 10px;
+	margin: 50px 10px 10px;
 }
-
-ul.sidenav a {
-  background-color: rgba(225,225,225,0.5);
-} 
 
 ul.sidenav li a {
   display: block;
   font-family: 'Press Start 2P';
-  font-size: 1em;
+  font-size: 0.96em;
   text-transform: uppercase;
   color: black;
   text-align: center;
   width: inherit;
   padding: 6px 14px;
-  padding-bottom: 13px;
   text-decoration: none;
   border: solid;
   border-radius: 2%;
   background-color: rgb(225,225,225);
+  background-color: rgba(225,225,225,0.5);
 } 
-
 
 ul.sidenav li .active {
   background-color: rgb(177,91,82);
@@ -397,7 +390,7 @@ ul.sidenav li a:hover:not(.active) {
 }
 
 #menu {
-
+	  display: none;
 	  cursor: pointer;
 	  font-family: 'Press Start 2P';
 	  font-size: 18px;
@@ -427,10 +420,10 @@ ul.sidenav li a:hover:not(.active) {
 	height: 150px;
 	line-height: 150px;
 	max-width: 90px;
-	padding: 12px 27px 12px 27px;
-	background: #866c89 url("art/pixels/flowers.jpg") fixed repeat;
+	padding: 10px 20px 10px 20px;
+	background: #866c89 url("art/pixels/spacecloudsbg.gif") fixed repeat;
 	border: 3px solid rgb(255, 255, 230);
-	box-shadow: 6px 6px rgb(255, 153, 255), -6px -6px rgb(255,113,206), 6px 6px 3px rgb(255, 153, 255), -6px -6px 3px rgb(255,113,206);
+	box-shadow: 6px 6px rgb(255,113,206), -6px -6px rgb(1,205,254), 6px 6px 3px rgb(255,113,206), -6px -6px 3px rgb(1,205,254);
 	border-radius: 30px;	
 }
 
@@ -441,11 +434,11 @@ ul.sidenav li a:hover:not(.active) {
 	margin: 4% 1%;
 	height: 200px;
 	line-height: 200px;
-	max-width: 106px;
-	padding: 12px 27px 12px 27px;
-	background: #866c89 url("art/pixels/flowers.jpg") fixed ;
+	max-width: 150px;
+	padding: 10px 20px 10px 20px;
+	background: #866c89 url("art/pixels/spacecloudsbg.gif") fixed repeat;
 	border: 3px solid rgb(255, 255, 230);
-	box-shadow: 6px 6px rgb(255, 153, 255), -6px -6px rgb(255,113,206), 6px 6px 3px rgb(255, 153, 255), -6px -6px 3px rgb(255,113,206);
+	box-shadow: 6px 6px rgb(255,113,206), -6px -6px rgb(1,205,254), 6px 6px 3px rgb(255,113,206), -6px -6px 3px rgb(1,205,254);
 	border-radius: 30px;	
 }
 
@@ -463,11 +456,9 @@ body {
 	align-self: center;
 	justify-self: center;
 	padding: 50px 70px 50px 70px;
-	background: #866c89 url("art/pixels/lolipop.jpg") fixed ;
-	background-position: center;
-	background-size: 85%;
+	background: #866c89 url("art/pixels/spacecloudsbg.gif") fixed repeat;
 	border: 3px solid rgb(255, 255, 230);
-	box-shadow: 6px 6px rgb(255, 153, 255), -6px -6px rgb(102, 0, 102), 6px 6px 3px rgb(255, 153, 255), -6px -6px 3px rgb(102, 0, 102);
+	box-shadow: 6px 6px rgb(255,113,206), -6px -6px rgb(1,205,254), 6px 6px 3px rgb(255,113,206), -6px -6px 3px rgb(1,205,254);
 	border-radius: 30px;
 }
 
@@ -487,12 +478,12 @@ body {
 
 header {
 	font-family: 'Cat';
-	color: rgb(102, 0, 102);
-	font-size: 760%;
+	color: rgb(255,113,206);
+	font-size: 600%;
 	text-align: center;
-	text-shadow: -2px -2px rgb(255, 255, 225, 0.4), 
+	text-shadow: -2px -2px rgb(255, 255, 225), 
 	4px 4px rgb(34, 11, 56), 
-	7px 7px rgb(255, 153, 255);
+	7px 7px rgb(1,205,254);
 	letter-spacing: 8px;
 	word-spacing: 15px;
 	display:inline-block;
@@ -767,7 +758,7 @@ h3:focus, h3:hover {
 
 .art-bg {
 	background: #FEDDCB fixed;
-	background-image: url("art/pixels/cityscape.gif");
+	background-image: url("/art/pixels/cityscape.gif");
 	background-repeat: repeat-x;
 	background-position: bottom;
 	width: 100%;
@@ -813,10 +804,10 @@ h3:focus, h3:hover {
 	background: white border-box;
 	background-image: 
 	/*Corners*/
-	  url(storage/images/assets/corner-tl.gif),
-	  url(storage/images/assets/corner-tr.gif),
-	  url(storage/images/assets/corner-br.gif),
-	  url(storage/images/assets/corner-bl.gif),
+	  url(/storage/images/assets/corner-tl.gif),
+	  url(/storage/images/assets/corner-tr.gif),
+	  url(/storage/images/assets/corner-br.gif),
+	  url(/storage/images/assets/corner-bl.gif),
 	  /*Corner Color*/
 	  url(/storage/images/assets/grey-border.gif),
 	  url(/storage/images/assets/grey-border.gif),
@@ -1589,6 +1580,7 @@ h3:focus, h3:hover {
    margin: auto auto 3% 8%;
    padding: 64px 0 0 0;
    width: 180px;
+   position: fixed;
    overflow: auto;
    background: none;
 }
@@ -1714,7 +1706,7 @@ h3:focus, h3:hover {
 /*Blog Headers*/
 
 .blog header {
-	font-family: 'Lazer 84';
+	font-family: 'Cat';
 	color: rgb(255,113,206);
 	font-size: 500%;
 	text-align: center;
@@ -2293,6 +2285,7 @@ h3:focus, h3:hover {
    margin: auto auto 3% 8%;
    padding: 64px 0 0 0;
    width: 180px;
+   position: fixed;
    overflow: auto;
    background: none;
 }
@@ -2753,7 +2746,7 @@ h3:focus, h3:hover {
 	"info title docs"
 	"menu main docs" 
 	". footer ." ;
-	background: #fcf7b2 url("art/pixels/mepattern.gif") fixed repeat;
+	background: #fcf7b2 url("art/pixels/space.jpg") fixed repeat;
 }
 
 .about header {
@@ -2972,40 +2965,40 @@ h3:focus, h3:hover {
 	background-color: white;
 	background-image: 
 	/*Corners*/
-	  url(/storage/images/assets/corner-tl.gif),
-	  url(/storage/images/assets/corner-tr.gif),
-	  url(/storage/images/assets/corner-br.gif),
-	  url(/storage/images/assets/corner-bl.gif),
+	  url(storage/images/assets/corner-tl.gif),
+	  url(storage/images/assets/corner-tr.gif),
+	  url(storage/images/assets/corner-br.gif),
+	  url(storage/images/assets/corner-bl.gif),
 	  /*Corner Color*/
-	  url(/storage/images/assets/grey-border.gif),
-	  url(/storage/images/assets/grey-border.gif),
-	  url(/storage/images/assets/grey-border.gif),
-	  url(/storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
 	  /*Laterals*/
-	  url(/storage/images/assets/border-x.gif), 
-	  url(/storage/images/assets/border-y.gif), 
-	  url(/storage/images/assets/border-x.gif), 
-	  url(/storage/images/assets/border-y.gif),
+	  url(storage/images/assets/border-x.gif), 
+	  url(storage/images/assets/border-y.gif), 
+	  url(storage/images/assets/border-x.gif), 
+	  url(storage/images/assets/border-y.gif),
 	  /*Lateral Color*/
-	  url(/storage/images/assets/grey-border.gif),
-	  url(/storage/images/assets/grey-border.gif),
-	  url(/storage/images/assets/grey-border.gif),
-	  url(/storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
+	  url(storage/images/assets/grey-border.gif),
 	  /*Menu*/
-	  url(/storage/images/assets/menu.gif), 
-	  url(/storage/images/assets/menu_2.gif), 
+	  url(storage/images/assets/menu.gif), 
+	  url(storage/images/assets/menu_2.gif), 
 	  /*Buttons*/
-	  url(/storage/images/assets/button-1.gif), 
-	  url(/storage/images/assets/button-2.gif), 
+	  url(storage/images/assets/button-1.gif), 
+	  url(storage/images/assets/button-2.gif), 
 	  /*Titlebar*/
-	  url(/storage/images/assets/titlebar.gif),
+	  url(storage/images/assets/titlebar.gif),
 	  /*Titlebar Color*/
-	  url(/storage/images/assets/titlebar-grey.gif),
+	  url(storage/images/assets/titlebar-grey.gif),
 	  /*Scroll Arrows*/
-	  url(/storage/images/assets/arrow-l.gif),
-	  url(/storage/images/assets/arrow-r.gif),
+	  url(storage/images/assets/arrow-l.gif),
+	  url(storage/images/assets/arrow-r.gif),
 	  /*Scrollbar*/
-	  url(/storage/images/assets/scrollbar.gif);
+	  url(storage/images/assets/scrollbar.gif);
 	  
 	  background-repeat:
 	  
@@ -3055,7 +3048,7 @@ h3:focus, h3:hover {
 	justify-self: center;
 	align-self: start;
 	background-color: #DEC7A7;
-	background-image: url(/storage/images/assets/confidential.png), radial-gradient(circle, #DEC7A7 17%, #dfc7a5, #eacba2 78%, #eab074);
+	background-image: url(storage/images/assets/confidential.png), radial-gradient(circle, #DEC7A7 17%, #dfc7a5, #eacba2 78%, #eab074);
 	background-repeat: no-repeat;
 	background-position: bottom 15px right 15px, center;
 	padding: 5px 5px 30px 8px;
@@ -3444,136 +3437,13 @@ img {
 		width: 100%;
 		max-width: 100%;
 		background: none;
-		height: 120%;
+		height: auto;
 		top: 0;
 		bottom: auto;
+		position: fixed;
 			z-index: 2;
 		padding: 0;   
 		margin: auto;
-
-  padding: 0 15px 15px;
-  baackground-image: 
-  
-  /*Corners*/
-  url(storage/images/assets/corner-tl.gif),
-  url(storage/images/assets/corner-tr.gif),
-  url(storage/images/assets/corner-br.gif),
-  url(storage/images/assets/corner-bl.gif),
-  /*Corner Color*/
-  url(storage/images/assets/pink-border.gif),
-  url(storage/images/assets/pink-border.gif),
-  url(storage/images/assets/pink-border.gif),
-  url(storage/images/assets/pink-border.gif),
-  /*Laterals*/
-  url(storage/images/assets/border-x.gif), 
-  url(storage/images/assets/border-y.gif), 
-  url(storage/images/assets/border-x.gif), 
-  url(storage/images/assets/border-y.gif),
-  /*Lateral Color*/
-  url(storage/images/assets/pink-border.gif),
-  url(storage/images/assets/pink-border.gif),
-  url(storage/images/assets/pink-border.gif),
-  url(storage/images/assets/pink-border.gif),
-  /*Menu*/
-  url(storage/images/assets/menu.gif), 
-  url(storage/images/assets/menu_2.gif), 
-  /*Buttons*/
-  url(storage/images/assets/button-1.gif), 
-  url(storage/images/assets/button-2.gif), 
-  /*Titlebar*/
-  url(storage/images/assets/titlebar.gif),
-  /*Titlebar Color*/
-  url(storage/images/assets/titlebar-pink.gif),
-  /*Scroll Arrows*/
-  url(/storage/images/assets/arrow-l.gif),
-  url(/storage/images/assets/arrow-r.gif),
-  /*Scrollbar*/
-  url(/storage/images/assets/scrollbar.gif),
-  /*Background*/
-  url(art/pixels/spacecloudsbg.gif);
-  
-  background-repeat:
-  
-  /*Corners*/
-  no-repeat,
-  no-repeat,
-  no-repeat,
-  no-repeat,
-  /*Corner Color*/
-  no-repeat,
-  no-repeat,
-  no-repeat,
-  no-repeat,
-  /*Laterals*/
-  repeat-x,
-  repeat-y,
-  repeat-x,
-  repeat-y,
-  /*Lateral Color*/
-  repeat-x,
-  repeat-y,
-  repeat-x,
-  repeat-y,
-  /*Menu*/
-  no-repeat, 
-  repeat-x, 
-  /*Buttons*/
-  no-repeat, 
-  no-repeat, 
-  /*Titlebar*/
-  repeat-x,
-  /*Titlebar Color*/
-  repeat-x,
-  /*Scroll Arrows*/
-  no-repeat,
-  no-repeat,
-  /*Scrollbar*/
-  repeat-x,
-  /*Background*/
-  repeat;
-  
-  background-position: 
-  
-  /*Corners*/
-  top left,
-  top right,
-  bottom right,
-  bottom left,
-  /*Corner Color*/
-  top left,
-  top right,
-  bottom right,
-  bottom left,
-  /*Laterals*/
-  top,
-  left,
-  bottom,
-  right,
-  /*Lateral Color*/
-  top,
-  left,
-  bottom,
-  right,
-  /*Menu*/
-  left 4px top 23px, 
-  left top 23px, 
-  /*Buttons*/
-  left 4px top 4px, 
-  right 4px top 4px, 
-  /*Titlebar*/
-  left top 4px,
-  /*Titlebar Color*/
-  left top 4px,
-  /*Scroll Arrows*/
-  left 4px bottom 4px,
-  right 4px bottom 4px,
-  /*Scrollbar*/
-  left bottom 4px;
-  
-  background-origin: border-box;
-  list-style-type: none;
-  width: 250px;
-  overflow: auto;
     
 	}
   
@@ -3582,10 +3452,11 @@ img {
 	}
   
 	ul.sidenav h1, .storage ul.sidenav h1, .about ul.sidenav h1 {
-
+		display: none;
 	}
   
 	.sidenav-buttons, .storage .sidenav-buttons, .about .sidenav-buttons {
+		margin: auto;
 	}
 	
   	#menu, .storage #menu, .about #menu {
@@ -3600,9 +3471,9 @@ img {
 	}
 
 	#menuhid, .storage #menuhid, .about #menuhid {
-
+		display: none;
 		background: rgb(255,255,255);
-		background: rgba(255,255,255,0);
+		background: rgba(255,255,255,0.7);
 	}
 	
 	.welcome {
@@ -3617,7 +3488,7 @@ img {
 	
 	.home-main {
 		grid-template-columns: auto 45% 45% auto;
-		grid-template-rows: 1px 90px 0px auto 200px 50px;
+		grid-template-rows: 1px 250px 50px auto 200px 50px;
 		grid-template-areas: 
 		"menu menu menu menu"
 		". title title ."
@@ -3628,8 +3499,7 @@ img {
 	}
 	
 	.main-window {
-		padding: 0px 9%;
-		padding-bottom: 15px
+		padding: 20px 4%;
 	}
 	
 	.home-main .main-window article:first-child, .home-main .main-window article:nth-child(even), .home-main .main-window article:nth-child(odd) {
@@ -3654,9 +3524,10 @@ img {
 		justify-self: center;
 		align-self: center;
 		position: relative;
-		margin: 0 5%;
+		margin: 0 11%;
 		height: auto;
-		line-height: 130px;
+		line-height: 180px;
+		max-width: unset;
 	}
 
 	.home-main .blinky-holder {
@@ -3665,10 +3536,10 @@ img {
 		justify-self: center;
 		align-self: center;
 		position: relative;
-		margin: 0 5%;
+		margin: 0 11%;
 		height: auto;
-		padding: 0 19px;
-		line-height: 150px;
+		padding: 0 10px;
+		max-width: unset;
 	}
 	
 	/*GRID - ART*/
