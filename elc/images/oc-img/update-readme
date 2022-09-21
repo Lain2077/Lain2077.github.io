@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-find -iname "*.png" -printf '%P\n' | sort | awk -f generate-readme.awk > README.md

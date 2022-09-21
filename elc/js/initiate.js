@@ -25,16 +25,7 @@ $(document).ready(function() {
         });
     });
 
-    // initialise icons
 
-    //addLine();
-    //addIcon('about.html', 'about', `${usr}/about.inf`, `images/oc-img/l-about.png`, 'About', 0);
-    //addIcon('blog.html', 'blog', 'attr://layers-blog.neocities.io/', `images/oc-img/l-blog.png`, 'Blog', 0);
-    // addIcon('login.html', 'login', 'C:/ユーザー/al1-ce/login.bat', `images/oc-img/l-login.png`, 'Login', 0);
-    //addIcon(chatLink, 'chat', 'attr://open-chat/void.io/', `images/oc-img/l-prog.png`, 'Chat', 0);
-    //addIcon('music.html', 'music', 'C:/ユーザー/al1-ce/music.bat', `images/oc-img/l-fsnd.png`, 'Music', 0);
-    //addIcon('todo.html', 'todo', 'C:/ユーザー/al1-ce/todo.txt', `images/oc-img/l-ftxt.png`, 'Todo', 0);
-    //addIcon('console.html', 'console', `${usr}/console.bat`, `images/oc-img/l-bat.png`, 'Bash', 0);
 
     addLine();
     addIconEmpty(5);
@@ -67,23 +58,13 @@ $(document).ready(function() {
 	addLine();
 	 addIconEmpty(5);
     addIcon('guestbook.html', 'wallpaper', `C:/acrhives/guestbook.bat`, `images/oc-img/sign.png`, 'Guestbook', 4);
-    // addIcon('knowledge.html', 'knowledge', 'attr://knowledge.io/', `${imgp}/l-know.png`, 'Data', 4);
+    
   addLine();
-	// addIcon('credits.html', 'layer', `C:/archives/art.html`, `images/oc-img/art.png`, 'Credits', 4);
+	
 
 
 
-    //if (getOrInitCookie('version', '0.0.0') != version) {
-       // setCookie('version', version, 365);
-       // if (purgeCookie) {
-           // getOrInitCookie("background", "6");
-         //   setCookie("background", "6");
-         //   getOrInitCookie("doBoot", "1");
-         //   getOrInitCookie("theme", "0");
-         //   setCookie("theme", "0");
-   //     }
-     //   deployWindow('release-notes.html', 'release', '127.0.0.1:8080/release-notes/');
-   // }
+    
 });
 
 
