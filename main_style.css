@@ -369,7 +369,7 @@ ul.sidenav li a {
   font-family: 'Press Start 2P';
   font-size: 0.96em;
   text-transform: uppercase;
-  color: black;
+  color: rgb(188, 116, 139);
   text-align: center;
   width: inherit;
   padding: 6px 14px;
@@ -377,7 +377,7 @@ ul.sidenav li a {
   border: solid;
   border-radius: 2%;
   background-color: rgb(225,225,225);
-  background-color: rgba(225,225,225,0.5);
+  background-color: rgba(83, 61, 76, 0.5);
 } 
 
 ul.sidenav li .active {
@@ -514,6 +514,7 @@ p.intro {
 
 p {
 	margin: 2px 10px 10px;
+	color: white;
 }
 
 a {
@@ -589,7 +590,8 @@ h2 {
 }
 
 h3 {
-	border-bottom: 1px dotted black;
+	border-bottom: 1px dotted rgb(188, 116, 139);
+	color: rgb(188, 116, 139);
 }
 
 h3:focus, h3:hover {
@@ -2751,7 +2753,7 @@ h3:focus, h3:hover {
 	"info title docs"
 	"menu main docs" 
 	". footer ." ;
-	background: #fcf7b2 url("/art/pixels/mepattern.gif") fixed repeat;
+	background: #000000 url("/art/pixels/aboutbg.gif") fixed repeat;
 }
 
 .about header {
@@ -2763,8 +2765,9 @@ h3:focus, h3:hover {
 }
 
 .about .sidenav {
+	border: 3px solid rgb(188, 116, 139);
 	
-	background-color: white;
+	background-color: rgb(0, 0, 0);
 	background-image: 
 	/*Corners*/
 	  url(/storage/images/assets/corner-tl.gif),
@@ -2845,7 +2848,7 @@ h3:focus, h3:hover {
 
 .about .main-window {
 
-	background: white border-box;
+	background: black border-box;
 	background-image: 
 	/*Corners*/
 	  url(/storage/images/assets/corner-tl.gif),
@@ -2959,7 +2962,7 @@ h3:focus, h3:hover {
 	  /*Scrollbar*/
 	  left bottom 4px;
 
-	border: none;
+	border: 3px solid rgb(188, 116, 139);
 	box-shadow: none;
 	border-radius: 0;
 	padding: 0 45px 50px;
@@ -3052,8 +3055,7 @@ h3:focus, h3:hover {
 	grid-area: docs;
 	justify-self: center;
 	align-self: start;
-	background-color: #DEC7A7;
-	background-image: url(/storage/images/assets/confidential.png), radial-gradient(circle, #DEC7A7 17%, #dfc7a5, #eacba2 78%, #eab074);
+	background-color: #000000;
 	background-repeat: no-repeat;
 	background-position: bottom 15px right 15px, center;
 	padding: 5px 5px 30px 8px;
@@ -3065,7 +3067,7 @@ h3:focus, h3:hover {
 .about-paper::before,
 .about-paper::after {
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-	border: 1px solid #E3C8A1;
+	border: 1px solid #BC748B;
 }
 
 .about-paper::before,
@@ -3074,7 +3076,7 @@ h3:focus, h3:hover {
 	position: absolute;
 	height: 95%;
 	width: 99%;
-	background-color: #B98A58;
+	background-color: #2c2c2c;
 }
 
 .about-paper::before {
@@ -3100,13 +3102,13 @@ h3:focus, h3:hover {
 	display: inline-block;
 	margin: 0;
 	padding: 3px 0 0;
-	color: #48341e;
+	color: #BC748B;
 }
 
 .about-paper .form {
 	
 	text-transform: uppercase;
-	border-bottom: 1px solid #48341e;
+	border-bottom: 1px solid #BC748B;
 	padding: 2px 15px 1px;
 	display: block;
 	text-align: center;
@@ -3115,12 +3117,13 @@ h3:focus, h3:hover {
 
 .about-paper p {
 	margin: 2px 2px 5px;
+	color: white;
 }
 
 
 
 div.polaroid {
-  background-color: white;
+  background-color: rgb(218, 161, 179);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
   float: right;
