@@ -1,0 +1,35 @@
+h1 {
+    font-family: azonix;
+    font-size: 45px;
+    color: rgb(162, 247, 50);
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(38, 47, 64);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(214, 223, 241);
+  }
+  
+
+  @font-face {
+    font-family: azonix;
+    src: url(assets/Azonix.otf);
+  }
+
+  @font-face {
+    font-family: caviar;
+    src: url(assets/Caviar.ttf);
+  }
+
+
+  body {
+    background-color: rgb(38, 47, 64);
+  }
