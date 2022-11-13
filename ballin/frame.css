@@ -1,9 +1,67 @@
 h1 {
     font-family: azonix;
-    font-size: 45px;
+    font-size: 50px;
     color: rgb(162, 247, 50);
 }
 
+h2 {
+  font-family: caviar;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.white {
+  color: rgb(214, 223, 241)
+}
+
+.logo {
+  position: absolute;
+  right: 6%;
+  top: 4%;
+  width: 30%;
+}
+
+#pa {
+  font-family: caviar;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  top: 13%;
+  left: 6%;
+  color: white;
+  background-color: rgb(38, 47, 64);
+  border: none;
+  display: inline-block;
+}
+
+.mobile-bottom-nav {
+  position: fixed;
+  padding-top: 2%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  will-change: transform;
+  transform: translateZ(0);
+  display: flex;
+  height: 50px;
+  background-color: rgb(38, 47, 64);
+}
+.mobile-bottom-nav__item {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mobile-bottom-nav__item--active {
+  color: red;
+}
+.mobile-bottom-nav__item-content {
+  display: flex;
+  flex-direction: column;
+}
 ::-webkit-scrollbar {
     width: 3px;
   }
@@ -32,4 +90,37 @@ h1 {
 
   body {
     background-color: rgb(38, 47, 64);
+  }
+
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  .column {
+    flex: 20%;
+    max-width: 25%;
+    padding: 5px 8px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  @media (max-width: 1200px) {
+    .column {
+      flex: 40%;
+      flex-wrap: wrap;
+      max-width: 50%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .column {
+      flex: 50%;
+      max-width: 100%;
+    }
   }
