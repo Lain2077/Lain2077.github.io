@@ -1,0 +1,82 @@
+<html >
+    <head>
+        <meta content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+        <title>Ballin</title>
+        <link rel="stylesheet" href="frame.css">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+   
+       <main style="margin-bottom: 70px;">
+       <div style="white-space: nowrap;">     
+<h1 style="margin-left: 3%; margin-top: 8%; font-size: 27px;">Asdfhellow</h1>
+<img src="logo.png" class="logo"></img>
+<i style="position: absolute; top: 3%; right: 24%; font-size: 1.5rem;"class="bi bi-pen white"></i>
+<i style="position: absolute; top: 3%; right: 10%; font-size: 1.8rem;"class="bi bi-gear white"></i>
+</div>
+<br>
+<div style="padding-bottom: 15px; background-image: url(bg.png); background-color: #7C889F; border-radius: 8px;" class="container">
+    <img style="margin-left: -5%; margin-top: 4%; width: 60%;" src="avatar.png"></img>
+    <i style="color: rgb(174, 0, 255); position: absolute; top: 19%; font-size: 1.5rem; "class="bi bi-stars"></i>
+    <i style="color: rgb(0, 217, 255); position: absolute; top: 19%; right: 30%; font-size: 1.5rem;" class="bi bi-emoji-smile-fill"></i>
+    <i style="color: rgb(30, 255, 0); position: absolute; top: 26%; font-size: 1.5rem; " class="bi bi-globe"></i>
+    <p style="color: #a10f05; border-radius: 10px; border-style: solid; padding: 5px; position: absolute; top: 15%; right: 5%;">Lvl 85</p>
+    <p style="font-size: 12px; border-radius: 10px; border-style: dashed; padding: 5px; position: absolute; top: 25%; right: 6%;">#39</p>
+   <div style="width: 38%; position: absolute; right: 5%; top: 39%; background-color: #769D73; border-radius: 10px;">
+    <p style="margin-left: 10%; text-decoration: underline;">Skills</p>
+    <ul>
+      <li>Dessin</li>
+      <li>Graphisme</li>
+      <li>Color theory</li>
+      <li>Latte art</li>
+    </ul>
+    </div>
+<p style="margin-left: 4%; margin-bottom: -3%; font-size: 17px;">J'aime la couleur pis les projets éclatés, un peu chaotiques et qui touchent à plusieurs médiums. Bonus points si t'aimes avoir du fun en travaillant!!!!!</p>
+    <select style="top: 87%; background-color: #AF796A; border: none;" id="pa">
+      <option value="photos">Photos</option>
+      <option value="projets">Projets</option>
+    </select>
+    <script>
+        $("#pa").on('change', function() {
+          var sel = $("select").val();
+          if (sel=='photos') {
+             $("#fot").css("display", "block");
+             $("#proj").css("display", "none");
+          }else if (sel=='projets') {
+             $("#fot").css("display", "none");
+             $("#proj").css("display", "block");
+          }
+      });    
+    </script> 
+<br>
+<img id="fot" style="margin-top: 13%; margin-left: 5%; border-radius: 10px; width: 90%; "src="profils/1.png">
+<img id="proj" style="display: none; margin-top: 13%; margin-left: 5%; border-radius: 10px; width: 90%; "src="Projets/10.png">
+</div>
+
+</main>
+  <nav class="mobile-bottom-nav">
+	<div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+		<div class="mobile-bottom-nav__item-content">
+			<a href="home.html"><i style="font-size: 1.7rem" class="bi bi-house-door-fill white"></i>
+		</div>		
+	</div>
+	<div class="mobile-bottom-nav__item">		
+		<div class="mobile-bottom-nav__item-content">
+			<a><i style="font-size: 1.7rem" class="bi bi-plus-circle white"></i></a>
+		</div>
+	</div>
+	<div class="mobile-bottom-nav__item">
+		<div class="mobile-bottom-nav__item-content">
+			<a href="ranking.html"><i style="font-size: 1.7rem" class="bi bi-trophy-fill white"></i></a>
+		</div>		
+	</div>
+	
+	<div class="mobile-bottom-nav__item">
+		<div class="mobile-bottom-nav__item-content">
+		<a href="profil.html"><i style="font-size: 1.7rem" class="bi bi-person-circle white"></i></a>
+		</div>		
+	</div>
+</nav>
+
+
+    </body>
+    </html>

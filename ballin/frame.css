@@ -10,6 +10,18 @@ h2 {
   font-size: 30px;
 }
 
+li {
+  font-family: caviar;
+  color: #DAE2F5;
+}
+
+p{
+  font-family: caviar;
+  font-weight: bold;
+  font-size: 19px;
+  color: #DAE2F5;
+}
+
 .white {
   color: rgb(214, 223, 241)
 }
@@ -123,4 +135,94 @@ h2 {
       flex: 50%;
       max-width: 100%;
     }
+  }
+  ol {
+    padding-inline-start: 0px;
+  }
+  .company {
+    background: #81869D;
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    position: relative;
+  }
+  .company > * {
+    padding: 0px 10px;
+  }
+  
+  .company h3:last-of-type {
+    position: absolute;
+    right: 10%;
+  }
+  
+  .company img {
+    width: 20px;
+  }
+
+  .notifs {
+    background: #81869D;
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    position: relative;
+    margin-bottom: 3%;
+  }
+  .notifs > * {
+    padding: 0px 10px;
+  }
+  
+  .notifs h3:last-of-type {
+    position: absolute;
+    right: 10%;
+  }
+  
+  .notifs img {
+    width: 20px;
+  }
+
+
+  .list-wrapper {
+    max-width: 400px;
+    margin: 50px auto;
+  }
+  
+  .list {
+    background: transparent;
+    border-radius: 2px;
+    list-style: none;
+    padding: 0px 0px;
+    margin-bottom: 10%;
+  }
+  
+  .list-item {
+    border-color: #BDFC50;
+    border-style: solid;
+    display: flex;
+    margin: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .list-item-image {
+    margin-left: 10%;
+    border-radius: 50%;
+    width: 64px;
+  }
+  .list-item-content {
+    margin-left: 20px;
+  }
+  .list-item-content h4, .list-item-content p {
+    margin: 0;
+  }
+  .list-item-content h4 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  .list-item-content p {
+    margin-top: 5px;
+    color: #aaa;
   }

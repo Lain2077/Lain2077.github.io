@@ -1,0 +1,116 @@
+<html >
+    <head>
+        <meta content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+        <title>Ballin</title>
+        <link rel="stylesheet" href="frame.css">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+   
+       <main style="margin-bottom: 70px;">
+       <div style="white-space: nowrap;">     
+<h1 style="margin-left: 3%; margin-top: 8%; font-size: 27px;">Ranking</h1>
+<img src="logo.png" class="logo"></img>
+</div>
+<i style="position: absolute; top: 12%; right: 7%; font-size: 2.4rem;"class="bi bi-filter white"></i>
+<input style="margin-left: 3%; height: 25px;"placeholder="Rechercher"></input>
+<br>
+<ol class="companies">
+</ol>
+<script>
+  var companies = [
+{
+  rank: 1,
+  name: "Mina",
+  salary: "2.6M Balls",
+  logo: "bubs/6.png"
+},
+{
+  rank: 2,
+  name: "Asdfhellow",
+  salary: "1.8M Balls",
+  logo: "bubs/3.png"
+},
+{
+  rank: 3,
+  name: "Andy",
+  salary: "1.5M Balls",
+  logo: "bubs/1.png"
+},
+{
+  rank: 4,
+  name: "Antoine",
+  salary: "1.3M Balls",
+  logo: "bubs/2.png"
+},
+{
+  rank: 5,
+  name: "YouYou",
+  salary: "1.25M Balls",
+  logo: "bubs/5.png"
+},
+{
+  rank: 6,
+  name: "Andy",
+  salary: "1.1M Balls",
+  logo: "bubs/7.png"
+},
+{
+  rank: 7,
+  name: "Kevin",
+  salary: "1M Balls",
+  logo: "bubs/4.png"
+},
+{
+  rank: 8,
+  name: "Roseline",
+  salary: "950k Balls",
+  logo: "bubs/8.png"
+},
+];
+
+var companiesElement = document.querySelector(".companies");
+
+// Use pattern matching to add name and salary as h3's
+// Then add an img in the right place, between rank and name
+for (let company of companies) {
+var newCompanyElement = `
+  <li class="company">
+    <h3>${company.rank}.</h3>
+    <img style="width: 32px;"src="${company.logo}">
+    <h3>${company.name}</h3>
+    <h3>${company.salary}</h3>
+  </li>
+  `;
+companiesElement.innerHTML += newCompanyElement;
+}
+
+</script>
+</main>
+  <nav class="mobile-bottom-nav">
+	<div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+		<div class="mobile-bottom-nav__item-content">
+			<a href="home.html"><i style="font-size: 1.7rem" class="bi bi-house-door-fill white"></i>
+		</div>		
+	</div>
+	<div class="mobile-bottom-nav__item">		
+		<div class="mobile-bottom-nav__item-content">
+			<a><i style="font-size: 1.7rem" class="bi bi-plus-circle white"></i></a>
+		</div>
+	</div>
+	<div class="mobile-bottom-nav__item">
+		<div class="mobile-bottom-nav__item-content">
+			<a href="ranking.html"><i style="font-size: 1.7rem" class="bi bi-trophy-fill white"></i></a>
+		</div>		
+	</div>
+	
+	<div class="mobile-bottom-nav__item">
+		<div class="mobile-bottom-nav__item-content">
+		<a href="profil.html"><i style="font-size: 1.7rem" class="bi bi-person-circle white"></i></a>
+		</div>		
+	</div>
+</nav>
+
+
+    </body>
+    
+    </html>
