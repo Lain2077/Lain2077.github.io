@@ -1,45 +1,45 @@
 :root {
-    --atheos-accent-color: #e5b7e5;
-    --atheos-border-color: #746f75;
-    --atheos-page-bg-color: #f7d4e9;
-    --atheos-window-bar-bg-color: #7a6573;
-    --atheos-custom-shadow-color: #e5b7e5;
-    --atheos-text-hover-color: #ce73ce;
-    --atheos-text-title-color: #edcbed;
-    --atheos-text-title-shadow-color: #e54bcb;
+    --theme-accent-color: #e5b7e5;
+    --theme-border-color: #746f75;
+    --theme-page-bg-color: #f7d4e9;
+    --theme-window-bar-bg-color: #7a6573;
+    --theme-custom-shadow-color: #e5b7e5;
+    --theme-text-hover-color: #ce73ce;
+    --theme-text-title-color: #edcbed;
+    --theme-text-title-shadow-color: #e54bcb;
 }
 
 /* FROM OC-STYLE.CSS */
 
 #infobar {
-    border: 4px ridge var(--atheos-border-color);
-    background-color: var(--atheos-accent-color);
+    border: 4px ridge var(--theme-border-color);
+    background-color: var(--theme-accent-color);
 }
 
 #infomenu {
-    border-right: 4px ridge var(--atheos-border-color);
+    border-right: 4px ridge var(--theme-border-color);
 }
 
 #page {
-    background-color: var(--atheos-page-bg-color);
+    background-color: var(--theme-page-bg-color);
 }
 
 #docker {
-    border: 4px ridge var(--atheos-border-color);
+    border: 4px ridge var(--theme-border-color);
 }
 
 .window {
-    border: 5px ridge var(--atheos-border-color);
+    border: 5px ridge var(--theme-border-color);
 }
 
 .win-bar {
-    background-color: var(--atheos-accent-color);
-    border-bottom: 3px ridge var(--atheos-border-color);
+    background-color: var(--theme-accent-color);
+    border-bottom: 3px ridge var(--theme-border-color);
 }
 
 .win-text {
-    background-color: var(--atheos-window-bar-bg-color);
-    border: 3px ridge var(--atheos-border-color);
+    background-color: var(--theme-window-bar-bg-color);
+    border: 3px ridge var(--theme-border-color);
 }
 
 #scanlines {
@@ -69,16 +69,16 @@
 
 hr {
     border-bottom-width: 2px;
-    border-color: var(--atheos-accent-color);
+    border-color: var(--theme-accent-color);
 }
 
 a:hover {
-    color: var(--atheos-text-hover-color);
+    color: var(--theme-text-hover-color);
     cursor: help;
 }
 
 a {
-    color: var(--atheos-accent-color);
+    color: var(--theme-accent-color);
     text-decoration: none;
 }
 
@@ -90,25 +90,25 @@ a {
 
 @keyframes titleAnim {
     50% {
-        color: var(--atheos-text-title-color);
-        text-shadow: var(--atheos-text-title-shadow-color) 1px 4px 5px;
+        color: var(--theme-text-title-color);
+        text-shadow: var(--theme-text-title-shadow-color) 1px 4px 5px;
     }
 }
 
 /* Custom elements */
 
 .block {
-    box-shadow: var(--atheos-custom-shadow-color) 0px 0px 2px;
+    box-shadow: var(--theme-custom-shadow-color) 0px 0px 2px;
 }
 
 /* FROM OC-ICONS.CSS */
 
 .dLink button {
-    color: var(--atheos-accent-color);
+    color: var(--theme-accent-color);
     text-decoration: none;
 }
 
 .dLink button:hover {
-    color: var(--atheos-text-hover-color);
+    color: var(--theme-text-hover-color);
     cursor: help;
 }

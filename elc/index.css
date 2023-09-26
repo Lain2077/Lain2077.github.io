@@ -1,269 +1,298 @@
-/* Global */
-
-    *           {box-sizing: border-box;}
-    html,body   {
-                    height: 100%;      
-                    margin: 0;                  /*    The gg ez wombo combo for stretching    */
-        /*   your content to the edge of the screen.  */
-                    -webkit-user-select: none;
-                    user-select: none;
+*{
+    box-sizing:border-box
+}
+body,html{
+    height:100%;
+    margin:0;
+    -webkit-user-select:none;
+    user-select:none
+}
+body{
+    background-color:#000;
+    color:var(--font-color)
+}
+img{
+    image-rendering:crisp-edges
+}
+h1,h3,p{
+    margin:0;
+    padding:0
+}
+a{
+    text-decoration:none;
+    color:inherit
+}
+div,img{
+    -ms-interpolation-mode:nearest-neighbor;
+    image-rendering:-moz-crisp-edges;
+    image-rendering:-o-crisp-edges;
+    image-rendering:-webkit-optimize-contrast;
+    image-rendering:pixelated;
+    image-rendering:optimizeSpeed;
+    image-rendering:-webkit-optimize-contrast;
+    image-rendering:optimize-contrast
+}
+::-webkit-scrollbar{
+    width:2px;
+    height:2px
+}
+::-webkit-scrollbar-track{
+    background:#070707
+}
+::-webkit-scrollbar-thumb{
+    background:#555
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#f4f1e8
+}
+::-webkit-scrollbar-corner{
+    background:#070707
+}
+#content{
+    background-image:url(https://lain2077.github.io/elc/betrayed.gif);
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center
+}
+@font-face{
+    font-family:draw;
+    src:url(https://lain2077.github.io/elc/draw.ttf) format('truetype')
+}
+@font-face{
+    font-family:'Free Serif';
+    src:url(https://lain2077.github.io/elc/WOFF/FreeSerif-YO4a.woff)
+}
+h1{
+    font-family:'Free Serif'
+}
+@font-face{
+    font-family:'Free Serif Bold';
+    src:url(https://lain2077.github.io/elc/WOFF/FreeSerifBold-rdMp.woff)
+}
+@font-face{
+    font-family:'Free Serif Italic';
+    src:url(https://lain2077.github.io/elc/WOFF/FreeSerifItalic-KErA.woff)
+}
+@font-face{
+    font-family:'Free Serif Bold Italic';
+    src:url(https://lain2077.github.io/elc/WOFF/FreeSerifBoldItalic-MdKw.woff)
+}
+h3{
+    font-family:'Free Serif Bold Italic'
+}
+@font-face{
+    font-family:Jackeyfont;
+    src:url(https://lain2077.github.io/elc/WOFF/jackeyfont.woff)
+}
+.jack,a,p{
+    font-family:Jackeyfont
+}
+@font-face{
+    font-family:UVGA;
+    src:url(https://lain2077.github.io/elc/WOFF/UVGA16.woff)
+}
+@font-face{
+    font-family:Mo;
+    src:url(https://lain2077.github.io/elc/WOFF/MOSOUL.woff)
+}
+@font-face{
+    font-family:MSN;
+    src:url(https://lain2077.github.io/elc/WOFF/ms_sans_serif.woff)
+}
+:root{
+    --purplesaur:#430043;
+    --purpleHelmet:#770077;
+    --smurfCum:#000033;
+    --grassyKnoll:#004300;
+    --bruneous:#432100;
+    --screenBlack:#171717;
+    --truePink:#ffb0ff;
+    --punkPink:#ff00ff;
+    --grungeRed:#470000;
+    --font-color:#ffffff
+}
+.center{
+    justify-content:flex-start!important;
+    flex-flow:column nowrap!important
+}
+.button{
+    width:64px;
+    height:64px;
+    border:4px outset var(--truePink);
+    z-index:30
+}
+.button:active{
+    border:4px inset var(--truePink)
+}
+.b2{
+    top:64px
+}
+.b3{
+    top:128px
+}
+.b4{
+    top:192px
+}
+.back{
+    background:url(https://lain2077.github.io/elc/PNG/left.png) center no-repeat;
+    background-size:60% auto
+}
+.content{
+    z-index:13;
+    left:72px;
+    position:relative;
+    width:720px;
+    height:592px;
+    border:4px inset var(--truePink)
+}
+.icon{
+    width:100px;
+    height:100px;
+    margin:4px;
+    display:flex;
+    justify-content:center;
+    flex-flow:column wrap;
+    align-items:center;
+    box-sizing:border-box
+}
+.icon img{
+    width:48px;
+    height:48px;
+    margin-bottom:8px
+}
+.icon p{
+    text-shadow:4px 4px 1px #000;
+    text-align:center;
+    font-size:12px;
+    margin-top:4px
+}
+.icon:hover{
+    border:2px dashed var(--truePink)
+}
+.shortcut::before{
+    content:url(https://lain2077.github.io/elc/PNG/shortcut.png);
+    position:absolute;
+    transform:translate(-24px,4px)
+}
+.icon-fake{
+    margin:4px;
+    width:100px;
+    height:100px
+}
+.m{
+    visibility:hidden;
+    width:0;
+    height:0;
+    margin:0;
+    border:0
+}
+#splashTitle{
+    float:left;
+    margin:1em;
+    font-size:4vw;
+    font-family:draw;
+    -webkit-text-stroke:0 #000;
+    font-weight:400
+}
+#splashLogo{
+    height:120px;
+    float:right;
+    padding:1em;
+    margin-bottom:10px
+}
+#splashFlavor{
+    padding-left:1em;
+    font-size:1.6em;
+    position:fixed;
+    top:23%;
+    bottom:0;
+    width:100%
+}
+#os{
+    border:8px ridge var(--truePink);
+    padding:2em;
+    width:-moz-fit-content;
+    width:fit-content;
+    max-width:400px
+}
+#name{
+    font-size:2em;
+    color:var(--truePink)
+}
+#box{
+    position:absolute;
+    height:100%;
+    width:100%
+}
+#bottom{
+    position:absolute;
+    bottom:4px;
+    left:4px;
+    border:none
+}
+@media (pointer:coarse){
+    .content{
+        width:calc(100% - 72px);
+        height:100%
     }
-    body        {background-color: black; color: var(--font-color);}
-    img 		{image-rendering: crisp-edges;}
-    p, h1, h3   {margin: 0; padding: 0;}
-    a           {text-decoration: none; color: inherit;}
-
-    /* If "image-rendering: crisp-edges;" doesn't work right, fall back on this chungus: */
-    div,img     {   
-        -ms-interpolation-mode: nearest-neighbor;   /* IE8+ */
-        image-rendering: -moz-crisp-edges;          /* Firefox */
-        image-rendering: -o-crisp-edges;            /* Opera */
-        image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-        image-rendering: pixelated;                 /* Chrome */
-        image-rendering: optimizeSpeed;             /* Halt Smoothing */
-        image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
-        image-rendering: optimize-contrast;         /* Some misc. Chromium browsers */
+    .icon{
+        margin:12px;
+        width:112px;
+        height:112px;
+        border:4px outset var(--truePink);
+        background:url(PNG/purp.png)
     }
-
-::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
-}
-
-::-webkit-scrollbar-track {
-    background: #070707;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #555;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #f4f1e8;
-}
-
-::-webkit-scrollbar-corner {
-    background: #070707;
-}
-
-
-#content      {
-background-image:url('betrayed.gif');
-background-repeat:no-repeat;
-background-size:contain;
-background-position:center;
-}
-/* Fonts */
-@font-face {
-    font-family: 'draw';
-    src: url("draw.ttf") format('truetype');
-}
-    /* FreeSerif Font by GNU Freefont, for personal website use under GPL license. */
-    @font-face {font-family: 'Free Serif'; src: url('WOFF/FreeSerif-YO4a.woff');}                       .fs, h1  {font-family: 'Free Serif';}
-    @font-face {font-family: 'Free Serif Bold'; src: url('WOFF/FreeSerifBold-rdMp.woff');}              .fsb     {font-family: 'Free Serif Bold';}
-    @font-face {font-family: 'Free Serif Italic'; src: url('WOFF/FreeSerifItalic-KErA.woff');}          .fsi     {font-family: 'Free Serif Italic';}
-    @font-face {font-family: 'Free Serif Bold Italic'; src: url('WOFF/FreeSerifBoldItalic-MdKw.woff');} .fsbi,h3 {font-family: 'Free Serif Bold Italic';}
-
-    /* Got this font off archive.org, the original is unlicensed but says it's okay for use in personal projects. */
-    @font-face {font-family: 'Jackeyfont'; src: url('WOFF/jackeyfont.woff');}                           .jack,a,p{font-family: 'Jackeyfont';}
-
-    /* TODO: Find licenses for these fonts: */
-    @font-face {font-family: 'UVGA'; src: url('WOFF/UVGA16.woff');}                                     .UVGA    {font-family: 'UVGA';}
-    @font-face {font-family: 'Mo'; src: url('WOFF/MOSOUL.woff');}                                       .mo      {font-family: 'Mo';}
-    @font-face {font-family: 'MSN'; src: url('WOFF/ms_sans_serif.woff');}                               .msn     {font-family: 'MSN';}
-
-/* Color Motif Swatches & Gradients */
-
-:root           {
-                    --purplesaur:   #430043;    /* Setting colors to variables makes holiday theming a breeze! */
-                    --purpleHelmet: #770077;
-                    --smurfCum:     #000033;
-                    --grassyKnoll:  #004300;
-                    --bruneous:     #432100;
-                    --screenBlack:  #171717;
-                    --truePink:     #ffb0ff;
-                    --punkPink:     #ff00ff;
-                    --grungeRed:    #470000;
-
-                    --font-color:   #ffffff;
-}
-.vaporDeath     {background: linear-gradient(180deg, var(--purplesaur) 0%, var(--smurfCum) 100%), var(--purplesaur);}
-
-.borderRidge    {border: 8px ridge var(--truePink);}
-.borderInset    {border: 4px inset var(--truePink);}
-.borderOutset   {border: 4px outset var(--truePink);}
-
-/* Flexbox Magic */
-
-.flex           {display: flex; justify-content: center; align-items: center;}
-    .row        {flex-flow: row wrap;}
-    .column     {flex-flow: column wrap;}
-    .center     {justify-content: flex-start !important; flex-flow: column nowrap !important;}
-    .desk       {flex-flow: row wrap; align-items: top !important;}
-    
-    /* Flexboxes are beautiful, man. This site/bible is your best bet for learning flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-
-/* Modal Magic */
-
-/* .target          {visibility: hidden;}
-    .target:target  {visibility: visible;} */
-
-.target             {display: none;}
-    .target:target  {display: block;}   /* Swapped to "display: none;" so that embeds don't load in the background and bog down the site.}*/
-
-    /*  
-        Aight, here's the lowdown about modals. Modals are elements that are hidden until "targeted" by clicking a link to it.
-        Say you set a <div> to 'id="bepis"' and use the above 'class="target"'. It will stay hidden until an anchor tag referring
-        to it is clicked, something like this: <a href="#bepis"><p>ligma</p></a> . Make sure the <a> reference has a pound (#)
-        symbol before the ID you're linking, or it won't work. Boom, "pages" (or popups) within your main page!
-    */
-
-/* [Messy] Toolbar Formatting */
-
-.toolbar        {
-                    position: absolute; 
-                    border: 4px inset var(--truePink);
-                    width: 72px; 
-                    height: 100%; 
-                    left: 0; 
-                    background: url('PNG/fade.png'), var(--purpleHelmet);
-}
-.toolbarBottom   {
-                    position: absolute; 
-                    border: 4px inset var(--truePink); 
-                    height: 72px; 
-                    width: 100%;
-                    bottom: 0; 
-                    background: url('PNG/fade.png'), var(--purpleHelmet);
-}
-    .ridge      {left: 72px; border-right: none; background: none;}   /* Middle ridge sometimes renders weird, this fixes that. */
-
-    /* Button Shit */
-        .button {width: 64px; height: 64px; border: 4px outset var(--truePink); z-index: 30;}
-            .button:active   {border: 4px inset var(--truePink);}
-        .k      {border: 8px groove var(--purplesaur) !important; font-size: 2.5em; text-shadow: 8px 8px 2px #000;}
-            .k:active   {border: 8px inset var(--purplesaur) !important; background-color: var(--purplesaur);}
-        .b2     {top: 64px;}
-        .b3     {top: 128px;}
-        .b4     {top: 192px;}
-
-        .back           {background: url('PNG/left.png') center no-repeat; background-size: 60% auto;}
-        .popout         {background: url('PNG/popout.png') center no-repeat, var(--truePink); background-size: 60% auto;}
-
-        .redButton      {background: red;}
-        .blueButton     {background: blue;}
-        .greenButton    {background: green;}
-
-/* Desktop Formatting */
-
-    desktop   {
-        position: fixed; 
-        width: 100%; 
-        top: 0; 
-        bottom: 0; 
-        right: 0; 
-        left: 0;
-        display: flex; 
-        justify-content: center; 
-        align-items: center;
-        font-family: 'Jackeyfont';
+    .icon img{
+        margin:4px
     }
-
-.content    {z-index: 13; left: 72px; position: relative; width: 720px; height: 592px; border: 4px inset var(--truePink);}
-.contentWide{z-index: 13; position: relative; width: 792px; height: 520px; border: 4px inset var(--truePink);}
-
-
-/* Icon Formatting */
-
-.icon    {width: 100px; height: 100px; margin: 4px; display: flex; justify-content: center; flex-flow: column wrap; align-items: center; box-sizing: border-box;}
-.icon img{width: 48px; height: 48px; margin-bottom: 8px;}
-.icon   p{text-shadow: 4px 4px 1px #000; text-align: center; font-size: 12px; margin-top: 4px;}
-    .icon:hover {border: 2px dashed var(--truePink);}
-        .new      p::before {content:'★ '; color: yellow;}
-        .live     p::before {content:'■ '; color: lime;}
-        .shortcut::before   {content: url('PNG/shortcut.png'); position: absolute; transform: translate(-24px, 4px);}
-        .offline::before    {content: url('PNG/offline.png'); position: absolute; transform: translate(-24px, 4px);}
-            .offline    {color: grey;}
-    .icon-fake  {margin: 4px; width: 100px; height: 100px;}
-    .m   {visibility: hidden; width: 0; height: 0; margin: 0; border: 0;}
-
-/* Element-Specific Formatting */
-    /* Splash (ichi 一) */
-        #splashTitle    {float: left; margin: 1em; font-size: 4vw; font-family: 'draw'; -webkit-text-stroke: 0px black; font-weight: normal;}
-        #splashLogo     {height: 120px; float: right; padding: 1em; margin-bottom: 10px;}
-        #splashFlavor   {padding-left: 1em; font-size: 1.6em;
-    position: fixed;
-    top: 23%; /* Header Height */
-    bottom: 0px; /* Footer Height */
-    width: 100%;
+    .icon:active{
+        border:4px inset var(--truePink)
+    }
+    .icon:hover{
+        border:4px outset var(--purplesaur)
+    }
+    .icon-fake{
+        margin:12px;
+        width:112px;
+        height:112px
+    }
+    .m-{
+        visibility:hidden;
+        width:0;
+        height:0;
+        margin:0;
+        border:0
+    }
+    .m{
+        visibility:visible
+    }
+    #os{
+        width:90%
+    }
 }
-    /* 6th frame (roku 六) */
-        #seis           {border: none;}
-    /* 8th frame (hachi 八) */
-        #chode  {position: absolute; left: 76px; top: 4px; bottom: 4px; right: 4px;}
-        #chode p{position: absolute; left: 25px; top: 15px;}
-        .fancy  {font-size: 2.5em; text-shadow: 8px 8px 2px #000000;}
-    /* Guestbook */
-        #gb     {z-index: 40;}
-        #gbLoad {position: absolute; top: 0; background: url('PNG/purp.png');}
-    /* Info */
-        #info   {background: url('GIF/purp.gif');}
-        #os     {border: 8px ridge var(--truePink); padding: 2em; width: -moz-fit-content; width: fit-content; max-width: 400px;}
-        #petals {position: relative; width: 100%;}
-        #name   {font-size: 2em; color: var(--truePink);}
-    /* Chat */
-        #chatty {background: url('GIF/purp.gif');}
-        #heyhey {position: absolute; height: 80%; left: -2em;  bottom: 1em;}
-        #queque {position: absolute; height: 80%; right: -2em; bottom: 1em;}
-        #roses  {position: absolute; width: 110%; top: -5em;}
-        #shout  {position: absolute; width: 45%; height: 95%;}
-        #box    {position: absolute; height: 100%; width: 100%;}
-    /* BBS */
-        #beeg   {height: 592px;}
-        #bottom {position: absolute; bottom: 4px; left: 4px; border: none;}
-        #BBSinfo{background: url('GIF/purp.gif');}
-        #dos    {border: 8px ridge var(--truePink); padding: 2em; width: -moz-fit-content; width: fit-content; margin: 1em;}
-    /* Offline */
-        #contact{background: url('GIF/purp.gif');}
-            #contact p{margin: 2em; padding: 1em;}
-
-/* Mobile Formatting */
-
-@media (pointer: coarse){
-    .desk       {flex-flow: row wrap; align-items: center;}
-
-    .content    {width: calc(100% - 72px); height: 100%;}
-
-    .icon       {margin: 12px; width: 112px; height: 112px; border: 4px outset var(--truePink); background: url('PNG/purp.png');}
-    .icon    img{margin: 4px;}
-        .icon:active    {border: 4px inset var(--truePink);}
-        .icon:hover     {border: 4px outset var(--purplesaur);}
-    .icon-fake  {margin: 12px; width: 112px; height: 112px;}
-    .m-         {visibility: hidden; width: 0; height: 0; margin: 0; border: 0;} /* Temporary & janky mobile icon formatting for the BBS */
-    .m          {visibility: visible;}
-
-    #os         {width: 90%;}
-
-    #shout      {width: 90%;}
-
-    #beeg       {visibility: hidden;}
-    .byebye     {visibility: hidden;}
+@keyframes colorRotate{
+    from{
+        color:red
+    }
+    10%{
+        color:orange
+    }
+    50%{
+        color:#ff0
+    }
+    75%{
+        color:green
+    }
+    100%{
+        color:#00f
+    }
 }
-
-/* le funne colours */
-
-    rainbow     {animation: colorRotate 1s ease-in-out infinite;}
-    @keyframes colorRotate {
-        from    {color: red;}
-        10%     {color: orange;}
-        50%     {color: yellow;}
-        75%     {color: green;}
-        100%    {color: blue;}
-        }
-    .invert     {-webkit-filter: invert(100%); filter: invert(100%);}
-
-    lain        {color: #d2738a;}
-    red         {color: #0fdfff;}
-	bet        {color: red;}
-    orange      {color: orange;}
-    yellow      {color: yellow;}
+lain{
+    color:#d2738a
+}
+red{
+    color:#0fdfff
+}
+bet{
+    color:red
+}
