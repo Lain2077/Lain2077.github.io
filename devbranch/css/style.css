@@ -14,6 +14,7 @@ the images as variables */
     --content: #00ffc3;
     --color-main: #bc748b;
     --color-secondary: #181818;
+    --color-highlight: #FFA9BF;
 }
 
 /* if you have the URL of a font, you can set it below */
@@ -208,7 +209,7 @@ left sidebar is 1, content is 2, and right sidebar is 3! */
 }
 
 footer {
-    background-color: #13092D;
+    background-color: var(--color-secondary);
     /* background color for footer */
     width: 100%;
     height: 40px;
@@ -431,14 +432,14 @@ feel free to play around with the order!
 
 .folder-selection-container h1 {
     margin: 0;
-    font-size: 4em; /* Larger title size */
+    font-size: 3em; /* Larger title size */
 }
 
 .folder-selection-grid {
     display: flex;
     justify-content: center;
     gap: 30px; /* Increased space between folder items */
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .folder-selection-item {
@@ -462,4 +463,143 @@ feel free to play around with the order!
 .folder-selection-item p {
     margin: 0;
     font-size: 1em; /* Slightly larger font size for text */
+}
+
+.experience {
+    margin-bottom: 20px;
+}
+
+.experience-title {
+    cursor: pointer;
+    background-color: #bc748b;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Optional: Use a monospace font */
+    font-size: 1.2em;
+}
+
+.experience-title:hover {
+    background-color: #a55d77;
+}
+
+.experience-details {
+    display: none;
+    background-color: #1a1a1a; /* Dark background for details */
+    color: #ffb6c1; /* Light pink color for text */
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+
+.experience-date {
+    font-style: italic;
+    color: #a9a9a9; /* Grey color for dates */
+    margin-bottom: 10px;
+}
+
+.toggle-icon {
+    float: right;
+    font-size: 1.2em;
+}
+
+
+
+/* Introduction Section */
+.skills-introduction {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.intro-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.intro-text {
+    flex: 2 1 60%;
+}
+
+.intro-qualities {
+    flex: 1 1 35%;
+    border: 1px solid var(--color-highlight);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-secondary);
+}
+
+.intro-qualities h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.intro-qualities ul {
+    list-style-type: disc;
+    margin-left: 0px;
+}
+
+.intro-qualities li {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+/* Software Section */
+.skills-software {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-software h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Grid layout for the software badges */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* Column styling */
+.skills-column {
+    text-align: center;
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+.skills-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Badge image styling */
+.skills-column a {
+    display: inline-block;
+    margin: 5px;
+}
+
+.skills-column img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+    }
+
+    .intro-text, .intro-qualities {
+        flex: 1 1 100%;
+    }
 }

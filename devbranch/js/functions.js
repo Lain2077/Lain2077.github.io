@@ -20,3 +20,17 @@ function filterItems(category) {
         }
     });
 }
+
+
+function toggleDetails(id) {
+    const details = document.getElementById(id);
+    const icon = details.previousElementSibling.querySelector('.toggle-icon');
+
+    if (details.style.display === "none" || details.style.display === "") {
+        details.style.display = "block";
+        icon.textContent = "-";
+    } else {
+        details.style.display = "none";
+        icon.textContent = "+";
+    }
+}
