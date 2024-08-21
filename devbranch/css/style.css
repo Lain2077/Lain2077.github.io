@@ -1,0 +1,465 @@
+/* user styles */
+
+		/* styles are what change the color and sizes of stuff on your site. */
+
+		/* these are variables that are being used in the code
+these tended to confuse some people, so I only kept 
+the images as variables */
+
+:root {
+    --header-image: url('https://sadhost.neocities.org/images/layouts/wp.jpeg');
+    --body-bg-image: url('../backgrounds/stars5.gif');
+
+    /* colors */
+    --content: #00ffc3;
+    --color-main: #bc748b;
+    --color-secondary: #181818;
+}
+
+/* if you have the URL of a font, you can set it below */
+/* feel free to delete this if it's not your vibe */
+
+/* this seems like a lot for just one font and I would have to agree 
+but I wanted to include an example of how to include a custom font.
+If you download a font file you can upload it onto your Neocities
+and then link it! Many fonts have separate files for each style
+(bold, italic, etc. T_T) which is why there are so many!
+
+*/
+
+@font-face {
+    font-family: Nerd;
+    src: url('../fonts/3270NerdFont-Regular.ttf');
+}
+
+@font-face {
+    font-family: Nerd-Symbols;
+    src: url('../fonts/SymbolsNerdFont-Regular.ttf');
+}
+
+
+@font-face {
+    font-family: ArtDystopia;
+    src: url('../fonts/ArtDystopia.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('../https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('../https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
+    font-style: italic;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Nerd', sans-serif;
+    margin: 0;
+    background-color: black;
+    /* you can delete the line below if you'd prefer to not use an image */
+    background-size: 125px;
+    color: #d2738a;
+    background-image: var(--body-bg-image);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* below this line is CSS for the layout */
+
+/* this is a CSS comment
+to uncomment a line of CSS, remove the * and the /
+before and after the text */
+
+
+/* the "container" is what wraps your entire website */
+/* if you want something (like the header) to be Wider than
+the other elements, you will need to move that div outside
+of the container */
+#container {
+    max-width: 900px;
+    /* this is the width of your layout! */
+    /* if you change the above value, scroll to the bottom
+and change the media query according to the comment! */
+    margin: 0 auto;
+    /* this centers the entire page */
+}
+
+/* the area below is for all links on your page
+EXCEPT for the navigation */
+#container a {
+    color: #FFA9BF;
+    font-weight: bold;
+    /* if you want to remove the underline
+you can add a line below here that says:
+text-decoration:none; */
+}
+@media only screen and (max-width: 320px) {
+    .title {
+        font-size: 16vw;
+    }
+}
+
+.title {
+    font-family: ArtDystopia;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 0%;
+    font-size: 6em;
+    /*display: inline-block;
+}
+#header {
+    width: 100%;
+    /* header color here! */
+    /*height: 150px;
+    /* this is only for a background image! */
+    /* if you want to put images IN the header, 
+you can add them directly to the <div id="header"></div> element! */
+    /*background-image: var(--header-image);*/
+    background-size: 100%;
+}
+
+.icon-folder {
+    font-family: 'Nerd-Symbols', sans-serif;
+    margin-right: 5px; /* Adjust space between icon and text */
+    font-size: 1em; /* Adjust size to match text */
+    vertical-align: middle; /* Align icon with text */
+}
+
+
+/* navigation section!! */
+#navbar {
+    height: 40px;
+    background-color: var(--color-secondary);
+    /* navbar color */
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+/* navigation links*/
+#navbar li a {
+    color: #d2738a;
+    /* navbar text color */
+    font-weight: 800;
+    /*text-decoration: none; */
+    /* this removes the underline */
+}
+
+/* navigation link when a link is hovered over */
+#navbar li a:hover {
+    color: #a49cba;
+    text-decoration: underline;
+}
+
+#flex {
+    display: flex;
+}
+
+/* this colors BOTH sidebars
+if you want to style them separately,
+create styles for #leftSidebar and #rightSidebar */
+aside {
+    background-color: #241445;
+    width: 200px;
+    padding: 20px;
+    font-size: smaller;
+    /* this makes the sidebar text slightly smaller */
+}
+
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    background-color: var(--color-secondary);
+    flex: 1;
+    padding: 20px;
+    order: 2;
+}
+
+/* what's this "order" stuff about??
+allow me to explain!
+if you're using both sidebars, the "order" value
+tells the CSS the order in which to display them.
+left sidebar is 1, content is 2, and right sidebar is 3! */
+
+*/ #leftSidebar {
+    order: 1;
+}
+
+#rightSidebar {
+    order: 3;
+}
+
+footer {
+    background-color: #13092D;
+    /* background color for footer */
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    /* this centers the footer text */
+}
+
+h1,
+h2,
+h3 {
+    color: #d2738a;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+strong {
+    /* this styles bold text */
+    color: #FFA9BF;
+}
+
+/* this is just a cool box, it's the darker colored one */
+.box {
+    background-color: #13092D;
+    border: 1px solid #ED64F5;
+    padding: 10px;
+}
+
+@keyframes hrr { 
+    from {background-position: 0 0;}
+    to {background-position: +3200px 0;}
+}
+hr {
+    height: 2px;
+    border-width: 0;
+    background: repeating-linear-gradient(to right, #bc748b, #FFFFFF, #bc748b);
+    background-size: 400% 400%;
+    animation: hrr 2s linear infinite;
+  }
+/* CSS for extras */
+
+#topBar {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: smaller;
+    background-color: #13092D;
+}
+
+
+/* BELOW THIS POINT IS MEDIA QUERY */
+
+/* so you wanna change the width of your page? 
+by default, the container width is 900px.
+in order to keep things responsive, take your new height,
+and then subtrack it by 100. use this new number as the 
+"max-width" value below
+*/
+
+@media only screen and (max-width: 800px) {
+    #flex {
+        flex-wrap: wrap;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    /* the order of the items is adjusted here for responsiveness!
+since the sidebars would be too small on a mobile device.
+feel free to play around with the order!
+*/
+    main {
+        order: 1;
+    }
+
+    #leftSidebar {
+        order: 2;
+    }
+
+    #rightSidebar {
+        order: 3;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+}
+
+
+/*TUI GRID==================================================*/
+.nav-filter {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-filter li {
+    margin: 0 10px; /* Adjust spacing between items */
+}
+
+.nav-filter a {
+    text-decoration: none;
+    color: var(--color-main); /* Default color */
+    font-weight: normal;
+    font-size: 1em; /* Adjust font size as needed */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav-filter a.active,
+.nav-filter a:hover {
+    color: #FFA9BF; /* Highlight color for the selected filter */
+    font-weight: bold; /* Optional: make the font bold */
+    text-decoration: underline; /* Optional: underline the selected filter */
+}
+
+
+.tui-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    gap: 20px; /* Space between each grid item */
+    padding: 20px;
+}
+.tui-window {
+    display: none; /* Initially hide all */
+}
+
+.tui-fieldset {
+    height: 100%; /* Make the fieldset take the full height of the container */
+}
+
+.tui-window.show {
+    display: block; /* Show filtered items */
+    background-color: #040404;
+    padding: 1px;
+    position: relative;
+    box-shadow: 10px 10px black;
+    color: #bc748b;
+    overflow: hidden; /* Hide overflow if needed */
+}
+
+.tui-window.show:hover {
+    background-color: var(--color-secondary); /* Highlight color on hover */
+}
+
+/* Style for images */
+.post-img {
+    width: 100%; /* Make the image take the full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom space caused by inline-block */
+}
+/* Responsive design adjustments */
+@media only screen and (max-width: 1440px) {
+    .tui-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .tui-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .tui-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+
+/*EXPERINCESS*/
+/* General styles for educational qualifications */
+/* General styles for educational qualifications */
+.experiences {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.experiences-item {
+    margin-bottom: 20px; /* Space between each item */
+    padding: 10px; /* Space inside each item */
+}
+
+.experiences-diploma {
+    font-size: 1.2em; /* Slightly larger font for the diploma name */
+    font-weight: bold; /* Bold text for the diploma name */
+}
+
+.experiences-institution {
+    font-size: 1.2em; /* Match the diploma font size for consistency */
+    margin-left: 35px !important; /* Space between diploma name and institution name */
+    margin: 5px; /* Space above the date */
+}
+
+.experiences-date {
+    font-size: 1.1em; /* Slightly larger font for the date */
+    color: #666; /* Clear gray color for the date */
+    margin-top: 5px; /* Space above the date */
+}
+
+.experiences-description {
+    font-size: 1em; /* Normal font size for the description */
+    line-height: 1; /* Line height for better readability */
+}
+
+/*FOLDER SELECT==============================*/
+.folder-selection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Full viewport height */
+    margin: 0;
+}
+
+.folder-selection-container h1 {
+    margin: 0;
+    font-size: 4em; /* Larger title size */
+}
+
+.folder-selection-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Increased space between folder items */
+    margin-top: 20px;
+}
+
+.folder-selection-item {
+    display: flex;
+    margin: 25px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.folder-selection-icon {
+    font-size: 7em; /* Larger icon size */
+    margin-bottom: 10px; /* Increased space between icon and text */
+    vertical-align: middle; /* Align icon with text */
+}
+
+.folder-selection-item a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent element */
+}
+
+.folder-selection-item p {
+    margin: 0;
+    font-size: 1em; /* Slightly larger font size for text */
+}
