@@ -333,7 +333,7 @@ feel free to play around with the order!
 
 .tui-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    grid-template-columns: repeat(3, 1fr); /* 4 columns layout */
     gap: 20px; /* Space between each grid item */
     padding: 20px;
 }
@@ -479,13 +479,17 @@ feel free to play around with the order!
     font-size: 1.2em;
 }
 
+.experience-title strong {
+    color: var(--color-secondary);
+}
+
 .experience-title:hover {
     background-color: #a55d77;
 }
 
 .experience-details {
     display: none;
-    background-color: #1a1a1a; /* Dark background for details */
+    background-color: black; /* Dark background for details */
     color: #ffb6c1; /* Light pink color for text */
     padding: 10px;
     border-radius: 5px;
@@ -494,9 +498,11 @@ feel free to play around with the order!
 }
 
 .experience-date {
+    font-weight: bold;
     font-style: italic;
     color: #a9a9a9; /* Grey color for dates */
     margin-bottom: 10px;
+    margin-top: 0px;
 }
 
 .toggle-icon {
@@ -530,7 +536,7 @@ feel free to play around with the order!
     border: 1px solid var(--color-highlight);
     padding: 20px;
     border-radius: 8px;
-    background-color: var(--color-secondary);
+    background-color: black;
 }
 
 .intro-qualities h2 {
@@ -603,3 +609,100 @@ feel free to play around with the order!
         flex: 1 1 100%;
     }
 }
+
+.project-info {
+    margin-top: 20px;
+  }
+  
+  .project-title-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    flex-wrap: nowrap; /* Ensure no wrapping occurs */
+  }
+  
+  .project-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .project-date {
+    font-size: 1.3em;
+    color: #a9a9a9; /* Grey color for dates */
+    white-space: nowrap; /* Prevent wrapping of date */
+    margin-left: 10px;
+  }
+  
+  .project-description,
+  .project-learnings,
+  .project-credits {
+    margin-top: 20px;
+  }
+  
+  .project-description p {
+    margin: 0;
+  }
+  
+  .scramble-container {
+    display: inline-block; /* Ensures it behaves as part of the text flow */
+  }
+  
+  .project-learnings h3,
+  .project-credits h3 {
+    margin-top: 0;
+  }
+  
+  .project-learnings ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+  }
+  
+  .project-credits {
+    font-style: italic;
+  }
+  
+/* Style for responsive image */
+.project-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain; /* Ensures the image scales without cropping */
+}
+
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .project-title {
+      font-size: 1.8em;
+    }
+  
+    .project-date {
+      font-size: 1.1em;
+    }
+  }
+  
+
+  .dud    {
+  color: #757575;
+  }
+
+  .scrambling-text {
+    font-weight: 100;
+    font-style: italic;
+    color: var(--color-highlight);
+    display: inline;
+  }
+
+  .static-text {
+    display: inline; /* Keeps the static text inline with the scrambling text */
+  }

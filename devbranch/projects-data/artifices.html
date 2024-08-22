@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helo hotti!</title>
+    <link href="storage/images/assets/favicon.png" rel="icon">
+    <!-- StyleSheet -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/plyr.css" />
+	<script src="../js/functions.js"></script>
+	
+  </head>
+
+  <body class="home-main">
+    
+	<div id="container">
+		<div id="headerArea">
+			<div id="header" style="">
+			<h1 class="title">EDO'S VAULT</h1>
+			</div>
+			
+		<nav id="navbar" style="margin-bottom: 10px;"><ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../projects.html"><span class="icon-folder"></span>Projects</a></li>
+			<li><a href="../experiences.html"><span class="icon-folder"></span>Experiences</a></li>
+			<li><a href="../skills.html">Skills</a></li>
+			<li><a href="../about.html">About</a></li>
+		  </ul></nav></div>
+
+		<div id="flex">			
+			<main>
+				<div class="container">
+					<div class="plyr__video-embed" id="player">
+						<iframe
+						  src="https://www.youtube.com/embed/VfDOBpHsA90?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+						  allowfullscreen
+						  allowtransparency
+						  allow="autoplay"
+						></iframe>
+					  </div>
+
+					  <div class="project-info">
+						<div class="project-title-date">
+						  <h2 class="project-title">Artifices</h2>
+						  <span class="project-date">[SPRING 2024]</span>
+						</div>
+						<div class="project-description">
+						  <p>For each of Le Culte's editions, the audio conception team produces a small EP for which our team needs to produce an accompanied video-clip for each chapters. Being assigned two chapters, with first versions received a <strong>month and a half</strong> prior to the event, Marianne and I quickly opted for a scenario comprised of the last two songs of the EP. 
+							<br><br> The artistic direction of the Artifices edition was indeed oriented towards flashy and sparkly graphics, but we also wanted to emphasize the "artificial" in "artifices".
+							<br><br> This dual-episode project was produced in a short time frame with no prior knowledge to certain features of unreal engine that we planned to use for our scenario.
+						</p>
+						</div>
+						<div class="project-learnings">
+						  <h3>Features used:</h3>
+						  <ul>
+							<li>Chaos Cache</li>
+							<li>Clothing Assets</li>
+							<li>Metahumans</li>
+							<li>Animations</li>
+							<li>Procedural Level Streaming</li>
+						  </ul>
+						</div>
+						<div class="project-credits">
+						  <h3>Credits:</h3>
+						  <p><strong>Edo XCX: </strong> Co-Direction, Unreal production, bit of montage</p>
+						  <p><strong>Marianne Fournier: </strong> Co-Direction, Montage, custom textures</p>
+						  <p>Musical credits in video</p>
+						</div>
+					  </div>
+			</main>
+			
+		</div>
+		<footer id="footer" style="margin-top: 10px;">©Edo_Wayan_2024</footer>
+	</div>
+	<!-- THIS IS THE CSS !-->
+	<style>
+		
+	</style>
+
+	<script src="../js/plyr.js"></script>
+	<script>
+	  const player = new Plyr('#player');
+	</script>
+  </body>
+</html>
