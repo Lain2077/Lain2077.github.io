@@ -132,6 +132,71 @@ you can add them directly to the <div id="header"></div> element! */
     font-size: 1em; /* Adjust size to match text */
     vertical-align: middle; /* Align icon with text */
 }
+/* Container for the entire card */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 40px 0px; /* Padding for the card */
+    background-size: 125px;
+    background-image: var(--body-bg-image);
+    border-radius: 20px; /* Rounder corners */
+    border: 4px solid black; /* Transparent border to make space for the gradient */
+    max-width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.profile-card a {
+    text-decoration: none;
+}
+
+
+/* Container for social icons */
+.socials-container {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    gap: 55%;
+}
+
+.profile-card h1 {
+    font-size: 4em;
+}
+
+/* Icon styling */
+.icon-socials {
+    text-decoration: none;
+    font-size: 3em; /* Larger icons */
+    color: var(--color-main);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on icons */
+.icon-socials:hover {
+    color: var(--color-highlight);
+    transform: scale(1.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .profile-card {
+        border-radius: 15px;
+    }
+
+    .profile-card h1 {
+        font-size: 2.5em;
+    }
+
+    .profile-card p {
+        font-size: 1.2em;
+    }
+
+    .icon-socials {
+        font-size: 2em;
+    }
+}
 
 
 /* navigation section!! */
@@ -214,6 +279,7 @@ footer {
     width: 100%;
     height: 40px;
     padding: 10px;
+    margin-top: 10px;
     text-align: center;
     /* this centers the footer text */
 }
@@ -475,12 +541,14 @@ feel free to play around with the order!
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-    font-family: 'Courier New', Courier, monospace; /* Optional: Use a monospace font */
+    /*font-family: 'Courier New', Courier, monospace; /* Optional: Use a monospace font */
     font-size: 1.2em;
+    flex: wrap;
 }
 
 .experience-title strong {
     color: var(--color-secondary);
+    flex: 1 1 auto;
 }
 
 .experience-title:hover {
@@ -510,6 +578,21 @@ feel free to play around with the order!
     font-size: 1.2em;
 }
 
+@media (max-width: 600px) {
+    .experience-title {
+        text-align: center; /* Center text on small screens */
+    }
+
+    .experience-title strong {
+        width: 100%; /* Ensure the strong element takes full width */
+        text-align: center; /* Center align text for the strong element */
+    }
+
+    .toggle-icon {
+        float: none; /* Reset float for smaller screens */
+        margin: 0; /* Remove margin for better alignment */
+    }
+}
 
 
 /* Introduction Section */
