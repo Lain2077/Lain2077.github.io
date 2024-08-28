@@ -9,8 +9,24 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 	<script src="js/functions.js"></script>
 
+	 <!-- collectibles.js -->
+	 <link rel="stylesheet" type="text/css"  href="js/collectibles/collectibles.css">
+	 <script src="js/collectibles/collectibles.js" defer></script>
+	 <script>
+		 document.addEventListener("DOMContentLoaded", function(e) {
+			 new CollectiblesJS({
+				 itemVersion: 1,
+				 persistent: false,
+				 numItems: 5
+			 });
+		 });
+	 </script>
+
   </head>
 
+  <script type="text/javascript">
+	
+	</script>
   <body class="home-main">
     
 	<div id="container">
@@ -30,10 +46,11 @@
 		<div id="flex">
 			
 			<main>
-				<div class="home-box" style="text-align: center; padding-left: 0%;">
+				<div class="home-box" style="position: relative; text-align: center; padding-left: 0%;">
 
 				<hr><br>
-				<h1>「 Welcome! 」</h1>
+				<h1 style="" id="wobble">「 Welcome! 」</h1>
+				<script src="js/wobble.js"></script>
 				<i><span>///</span></i><br>
 				<hr>
 				</div>
@@ -42,6 +59,7 @@
 				<br><br>
 					Hi and welcome to my portfolio<strong>ヽ(*・ω・)ﾉ. 
 					// ♡.</strong><br>
+					<br>
 					<br>
 					Here you can find any information about my skills and how I spend my time. 
 					<br> <strong>Feel free to explore every corner! </strong>There is hidden gems to gather accross the whole website.
@@ -64,6 +82,7 @@
 				<h1>Friends</h1>
 				</div>
 				<hr>
+				<div data-keyid="0" class="collectible-item" data-key="80196192bb62fbb2997371c7afc986df9dba60169ad9496f3bf10050a204965376bc8dd9a8bf32a112d5f3d0937c09418a3"></div>
 				<div class="centered-view-counter">
 					<p>TOTAL VISITS:&#160;</p>
 					<img class="view-counter" src="https://www.cutercounter.com/hits.php?id=hxpcfqd&nd=6&style=26" border="0" alt="visitor counter">
