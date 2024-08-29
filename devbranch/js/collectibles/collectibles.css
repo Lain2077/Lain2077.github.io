@@ -353,13 +353,24 @@
 }
 .collectible-theme-coins .collectible-item .collectible-item-inner,
 .collectible-theme-coins .collectible-item-spot::before {
-    background-image: url(img/coin-ani.png);
+    background-image: url(img/butterfly.png);
     background-position: 0 0;
-    width: 16px;
-    height: 16px;
-    top: calc(50% - 8px);
-    left: calc(50% - 8px);
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
 }
+
+/*.collectible-theme-coins .collectible-item .collectible-item-inner,*/
+/*.collectible-theme-coins .collectible-item-spot::before {*/
+/*    background-image: url(img/coin-ani.png);*/
+/*    background-position: 0 0;*/
+/*    width: 16px;*/
+/*    height: 16px;*/
+/*    top: calc(50% - 8px);*/
+/*    left: calc(50% - 8px);*/
+/*}*/
+
 .collectible-theme-coins .collectible-item-collected .collectible-item-inner {
     animation: none;
 }
@@ -378,27 +389,56 @@
 .collectible-theme-coins .collectible-item[data-keyid="4"] {
     filter: saturate(88%) hue-rotate(219deg);
 }
+
 @keyframes CollectibleThemeCoinsIdle {
     0% {
         background-position: 0px 0px;
     }
-    16.67% {
-        background-position: -16px 0px;
+    12.50% {
+        background-position: -20px 0px;
     }
-    33.33% {
-        background-position: -32px 0px;
+    25% {
+        background-position: -40px 0px;
+    }
+    37.7% {
+        background-position: -60px 0px;
     }
     50% {
-        background-position: -48px 0px;
-    }
-    66.67% {
-        background-position: -64px 0px;
-    }
-    83.33%,
-    100% {
         background-position: -80px 0px;
     }
+    62.50% {
+        background-position: -100px 0px;
+    }
+    75% {
+        background-position: -120px 0px;
+    }
+    87.5%,
+    100% {
+        background-position: -140px 0px;
+    }
 }
+
+/*@keyframes CollectibleThemeCoinsIdle {*/
+/*    0% {*/
+/*        background-position: 0px 0px;*/
+/*    }*/
+/*    16.67% {*/
+/*        background-position: -16px 0px;*/
+/*    }*/
+/*    33.33% {*/
+/*        background-position: -32px 0px;*/
+/*    }*/
+/*    50% {*/
+/*        background-position: -48px 0px;*/
+/*    }*/
+/*    66.67% {*/
+/*        background-position: -64px 0px;*/
+/*    }*/
+/*    83.33%,*/
+/*    100% {*/
+/*        background-position: -80px 0px;*/
+/*    }*/
+/*}*/
 .collectible-theme-keys .collectible-item .collectible-item-inner {
     animation: CollectibleThemeKeysMoveUpDown 2s ease infinite;
     background-image: url(img/kenney-key.svg);
