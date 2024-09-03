@@ -21,40 +21,40 @@ the images as variables */
 
   
 
-@media (min-width: 900px) {
-    ::-webkit-scrollbar {
-        width: 15px;
-        height: 10px;}
-
-    /* . . . . . . . . . . . . . . . . */ 
-
-    ::-webkit-scrollbar-thumb:vertical{
-        background: var(--color-main);}
-
-    /* . . . . . . . . . . . . . . . . */ 
-
-    ::-webkit-scrollbar-track {
-        background-color:var(--color-secondary);}
-
-    /* . . . . . . . . . . . . . . . . */ 
-
-
-    ::-webkit-scrollbar-button:vertical:increment {
-        background-image: url('https://64.media.tumblr.com/4b98937f4c8275d8f359c72d48077d63/82cc59cca13b4819-87/s75x75_c1/b2c4a5d8166d1899fc057334849fe6a9ee78cb04.png');
-        width: 14px;
-        height: 16px;
-        background-color:var(--color-main);}
-
-    /* . . . . . . . . . . . . . . . . */ 
-
-    ::-webkit-scrollbar-button:vertical:decrement {
-        background-image:url(https://64.media.tumblr.com/3978da85f100af80be9c640f7143153f/82cc59cca13b4819-9b/s75x75_c1/d8319cafbf5809a089281996c8436cbabf28341c.png);
-        background-color:var(--color-main);
-        width: 14px;
-        height: 16px;}  
-
-     /* . . . . . . . . . . . . . . . . */        
-}
+/*@media (min-width: 900px) {
+/*    ::-webkit-scrollbar {
+/*        width: 15px;
+/*        height: 10px;}
+/*
+/*    /* . . . . . . . . . . . . . . . . */ 
+/*
+/*    ::-webkit-scrollbar-thumb:vertical{
+/*        background: var(--color-main);}
+/*
+/*    /* . . . . . . . . . . . . . . . . */ 
+/*
+/*    ::-webkit-scrollbar-track {
+/*        background-color:var(--color-secondary);}
+/*
+/*    /* . . . . . . . . . . . . . . . . */ 
+/*
+/*
+/*    ::-webkit-scrollbar-button:vertical:increment {
+/*        background-image: url('https://64.media.tumblr.com/4b98937f4c8275d8f359c72d48077d63/82cc59cca13b4819-87/s75x75_c1/b2c4a5d8166d1899fc057334849fe6a9ee78cb04.png');
+/*        width: 14px;
+/*        height: 16px;
+/*        background-color:var(--color-main);}
+/*
+/*    /* . . . . . . . . . . . . . . . . */ 
+/*
+/*    ::-webkit-scrollbar-button:vertical:decrement {
+/*        background-image:url(https://64.media.tumblr.com/3978da85f100af80be9c640f7143153f/82cc59cca13b4819-9b/s75x75_c1/d8319cafbf5809a089281996c8436cbabf28341c.png);
+/*        background-color:var(--color-main);
+/*        width: 14px;
+/*        height: 16px;}  
+/*
+/*     /* . . . . . . . . . . . . . . . . */        
+/*}
 
 /* if you have the URL of a font, you can set it below */
 /* feel free to delete this if it's not your vibe */
