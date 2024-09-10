@@ -77,6 +77,21 @@ and then link it! Many fonts have separate files for each style
     src: url('../fonts/SymbolsNerdFont-Regular.ttf');
 }
 
+@font-face {
+    font-family: Chintzy;
+    src: url('../fonts/chintzy.ttf');
+}
+
+@font-face {
+    font-family: Gameover;
+    src: url('../fonts/game_over.ttf');
+}
+
+@font-face {
+    font-family: Retrotech;
+    src: url('../fonts/RETROTECH.ttf');
+}
+
 
 @font-face {
     font-family: ArtDystopia;
@@ -84,18 +99,6 @@ and then link it! Many fonts have separate files for each style
     font-weight: bold;
 }
 
-@font-face {
-    font-family: Nunito;
-    src: url('../https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
-    font-style: italic;
-}
-
-@font-face {
-    font-family: Nunito;
-    src: url('../https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
-    font-style: italic;
-    font-weight: bold;
-}
 
 body {
     font-family: 'Nerd', sans-serif;
@@ -135,7 +138,7 @@ and change the media query according to the comment! */
 /* the area below is for all links on your page
 EXCEPT for the navigation */
 #container a {
-    color: #FFA9BF;
+    color: var(--color-highlight);
     font-weight: bold;
     /* if you want to remove the underline
 you can add a line below here that says:
@@ -148,11 +151,13 @@ text-decoration:none; */
 }
 
 .title {
-    font-family: ArtDystopia;
+    font-family: Chintzy;
     text-align: center;
     vertical-align: middle;
     padding-top: 0%;
     font-size: 6em;
+    letter-spacing: 6px;
+    text-shadow: 2px 5px 0px var(--color-highlight);
     /*display: inline-block;
 }
 #header {
@@ -355,7 +360,7 @@ h1 {
 
 strong {
     /* this styles bold text */
-    color: #FFA9BF;
+    color: var(--color-highlight);
 }
 
 /* this is just a cool box, it's the darker colored one */
@@ -450,7 +455,7 @@ feel free to play around with the order!
 
 .nav-filter a.active,
 .nav-filter a:hover {
-    color: #FFA9BF; /* Highlight color for the selected filter */
+    color: var(--color-highlight); /* Highlight color for the selected filter */
     font-weight: bold; /* Optional: make the font bold */
     text-decoration: underline; /* Optional: underline the selected filter */
 }
