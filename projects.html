@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helo hotti!</title>
+    <link href="storage/images/assets/favicon.png" rel="icon">
+    <!-- StyleSheet -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/functions.js" defer></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		  // Call the filterItems function with 'all' category when the page loads
+		  filterItems('all');
+		});
+	  </script>
+</head>
+
+  <body class="home-main">
+    
+	<div id="container">
+		<div id="headerArea">
+			<div id="header">
+			<h1 class="title">EDO'S VAULT</h1>
+			</div>
+			
+		<nav id="navbar" style="margin-bottom: 10px;"><ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="projects.html"><span class="icon-folder"></span>Projects</a></li>
+			<li><a href="experiences.html"><span class="icon-folder"></span>Experiences</a></li>
+			<li><a href="skills.html">Skills</a></li>
+			<li><a href="about.html">About</a></li>
+		  </ul></nav>
+
+		  <nav id="navbar" style="margin-bottom: 10px;">
+            <ul class="nav-filter">
+				<li><a href="#" onclick="filterItems('all'); return false;">All</a></li>
+                <li><a href="#" onclick="filterItems('interactive'); return false;">Interactive</a></li>
+                <li><a href="#" onclick="filterItems('video'); return false;">Video</a></li>
+                <li><a href="#" onclick="filterItems('dev'); return false;">Dev</a></li>
+                <li><a href="#" onclick="filterItems('design'); return false;">Design</a></li>
+            </ul>
+        </nav>
+
+		</div>
+
+		<div id="flex">
+			
+			<main>
+				<h1>PROJECTS</h1>
+				<span><i>Select a category with the buttons above</i></span>
+				<div class="tui-grid">
+                  <div onclick="location.href='projects-data/artifices.html';" style="cursor: pointer;" class="post tui-window" data-category="video">
+                      <fieldset class="tui-fieldset">
+                          <a>Artifices</a>
+                          <hr>
+                          <img class="post-img" src="projects-data/artifices/thumbnail.png">
+                          [LE CULTE] 
+                          <br> <strong>// Video Production // </strong>
+                          <br>「Unreal 5.3, Premiere Pro」
+                      </fieldset>
+                  </div>
+                  
+                  <div onclick="location.href='projects-data/etheralis.html';" style="cursor: pointer;" class="post tui-window" data-category="interactive dev">
+                    <fieldset class="tui-fieldset">
+                        <a>ETHERALIS</a>
+                        <hr>
+                        <img class="post-img" src="projects-data/etheralis/thumbnail.png">
+                        [ACADEMIC] 
+                        <br> <strong>// Interactive Installation // </strong>
+                        <br>「PyTorch, TouchDesigner, MadMapper」
+                    </fieldset>
+                  </div>
+
+                  <div onclick="location.href='projects-data/elc.html';" style="cursor: pointer;" class="post tui-window" data-category="interactive dev design">
+                    <fieldset class="tui-fieldset">
+                        <a>Earth's Last Computer</a>
+                        <hr>
+                        <img class="post-img" src="projects-data/elc/thumbnail.png">
+                        [PERSONAL] 
+                        <br> <strong>// Interactive Fiction // </strong>
+                        <br>「HTML, CSS, JavaScript」
+                    </fieldset>
+                  </div>
+
+                  <div onclick="location.href='projects-data/lazerz.html';" style="cursor: pointer;" class="post tui-window" data-category="interactive dev">
+                    <fieldset class="tui-fieldset">
+                        <a>LAZERZ</a>
+                        <hr>
+                        <img class="post-img" src="projects-data/lazerz/thumbnail.png">
+                        [LE CULTE] 
+                        <br> <strong>// Interactive Installation // </strong>
+                        <br>「TouchDesigner, DMX」
+                    </fieldset>
+                  </div>
+
+                  <div onclick="location.href='projects-data/deluge.html';" style="cursor: pointer;" class="post tui-window" data-category="video">
+                    <fieldset class="tui-fieldset">
+                        <a>DÉLUGE</a>
+                        <hr>
+                        <img class="post-img" src="projects-data/deluge/thumbnail.png">
+                        [LE CULTE] 
+                        <br> <strong>// Video Production // </strong>
+                        <br>「Unreal 5.3, Premiere Pro」
+                    </fieldset>
+                  </div>
+
+                <div onclick="location.href='projects-data/bsm.html';" style="cursor: pointer;" class="post tui-window" data-category="video">
+                  <fieldset class="tui-fieldset">
+                      <a>BSM</a>
+                      <hr>
+                      <img class="post-img" src="projects-data/bsm/thumbnail.png">
+                      [PERSONAL] 
+                      <br> <strong>// Video Production // </strong>
+                      <br>「Premiere Pro」
+                  </fieldset>
+              </div>
+
+              <div onclick="location.href='projects-data/vrooom.html';" style="cursor: pointer;" class="post tui-window" data-category="video">
+                <fieldset class="tui-fieldset">
+                    <a>VROOOM</a>
+                    <hr>
+                    <img class="post-img" src="projects-data/vrooom/thumbnail.png">
+                    [PERSONAL] 
+                    <br> <strong>// Video Production // </strong>
+                    <br>「Premiere Pro」
+                </fieldset>
+            </div>
+                    <!-- Repeat more tui-window elements with appropriate data-category -->
+        </div>
+
+			</main>
+			
+		</div>
+		<footer id="footer">©Edo_Wayan_2024</footer>
+	</div>
+	<!-- THIS IS THE CSS !-->
+	<style>
+		
+	</style>
+
+
+  </body>
+</html>
