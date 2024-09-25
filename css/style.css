@@ -1,17 +1,16 @@
 /* user styles */
 
-		/* styles are what change the color and sizes of stuff on your site. */
+/* styles are what change the color and sizes of stuff on your site. */
 
-		/* these are variables that are being used in the code
+/* these are variables that are being used in the code
 these tended to confuse some people, so I only kept 
 the images as variables */
 
 :root {
-    --header-image: url('https://sadhost.neocities.org/images/layouts/wp.jpeg');
+    --header-image: url('');
     --body-bg-image: url('../backgrounds/stars5.gif');
 
     /* colors */
-    --content: #00ffc3;
     --color-main: #bc748b;
     --color-secondary: #181818;
     --color-secondary-dark: #040404;
