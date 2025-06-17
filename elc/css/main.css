@@ -1,14 +1,14 @@
 @font-face{
     font-family:Kosugi;
-    src:url(https://lain2077.github.io/elc/fonts/Kosugi-Regular.ttf) format('truetype')
+    src:url(../fonts/Kosugi-Regular.ttf) format('truetype')
 }
 @font-face{
     font-family:Cynatar;
-    src:url(https://lain2077.github.io/elc/fonts/Cynatar.otf) format('truetype')
+    src:url(../fonts/Cynatar.otf) format('truetype')
 }
 @font-face{
     font-family:Techno;
-    src:url(https://lain2077.github.io/elc/fonts/TechnoBoard.ttf) format('truetype')
+    src:url(../fonts/TechnoBoard.ttf) format('truetype')
 }
 body{
     background-position:center;
