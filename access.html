@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In my mind?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            color: #bc748b;
+            font-family: '3270NerdFont', 'Nerd', 'Courier New', monospace;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+            cursor: none;
+        }
+        
+        /* Frame with barbed wire effect */
+        .frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+            border: 15px solid #000;
+            box-shadow: 
+                0 0 20px #000 inset,
+                0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Barbed wire corners */
+        .barbed-corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 101;
+            overflow: hidden;
+        }
+        
+        .top-left { top: -5px; left: -5px; }
+        .top-right { top: -5px; right: -5px; }
+        .bottom-left { bottom: -5px; left: -5px; }
+        .bottom-right { bottom: -5px; right: -5px; }
+        
+        .barbed-corner::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: 
+                radial-gradient(circle at 100% 100%, transparent 15px, #aaa 16px, #aaa 17px, transparent 18px),
+                radial-gradient(circle at 0 100%, transparent 15px, #aaa 16px, #aaa 17px, transparent 18px),
+                radial-gradient(circle at 100% 0, transparent 15px, #aaa 16px, #aaa 17px, transparent 18px),
+                radial-gradient(circle at 0 0, transparent 15px, #aaa 16px, #aaa 17px, transparent 18px);
+        }
+        
+        .top-left::before { top: 0; left: 0; }
+        .top-right::before { top: 0; right: 0; transform: rotate(90deg); }
+        .bottom-left::before { bottom: 0; left: 0; transform: rotate(270deg); }
+        .bottom-right::before { bottom: 0; right: 0; transform: rotate(180deg); }
+        
+        /* Barbed wire along edges */
+        .barbed-top, .barbed-bottom, .barbed-left, .barbed-right {
+            position: absolute;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 15px,
+                #aaa 15px,
+                #aaa 17px,
+                transparent 17px,
+                transparent 30px
+            );
+            z-index: 101;
+        }
+        
+        .barbed-top, .barbed-bottom {
+            height: 5px;
+            left: 70px;
+            right: 70px;
+        }
+        
+        .barbed-left, .barbed-right {
+            width: 5px;
+            top: 70px;
+            bottom: 70px;
+            background: repeating-linear-gradient(
+                180deg,
+                transparent,
+                transparent 15px,
+                #aaa 15px,
+                #aaa 17px,
+                transparent 17px,
+                transparent 30px
+            );
+        }
+        
+        .barbed-top { top: -2px; }
+        .barbed-bottom { bottom: -2px; }
+        .barbed-left { left: -2px; }
+        .barbed-right { right: -2px; }
+        
+        /* Glitch background */
+        .glitch-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            z-index: -2;
+            transition: background-image 0.5s ease-in-out;
+        }
+        
+        /* Overlay image that appears randomly */
+        .overlay-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data/imgs/rangda.jpg') center/cover;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+        
+
+        
+        /* Message styling */
+        .message {
+            position: absolute;
+            font-size: 18px;
+            color: #ff9bb8;
+            text-shadow: 0 0 8px #ff9bb8, 0 0 15px #bc748b, 0 0 25px #bc748b;
+            opacity: 0;
+            transition: opacity 1s;
+            pointer-events: none;
+            text-align: center;
+            z-index: 50;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #ff9bb8;
+            box-shadow: 0 0 15px #ff9bb8, 0 0 30px #bc748b;
+        }
+        
+        .message.flicker {
+            animation: flicker 0.5s infinite;
+        }
+        
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        
+
+        
+        /* Creative glitch lines */
+        .glitch-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #ff9bb8, #bc748b, #ff9bb8, transparent);
+            width: 100%;
+            opacity: 0;
+            z-index: 98;
+            pointer-events: none;
+            box-shadow: 0 0 10px #ff9bb8;
+            animation: glitchFlicker 0.1s infinite;
+        }
+        
+        @keyframes glitchFlicker {
+            0% { opacity: 1; transform: translateX(0px); }
+            20% { opacity: 0.8; transform: translateX(-3px); }
+            40% { opacity: 0.3; transform: translateX(2px); }
+            60% { opacity: 0.9; transform: translateX(-1px); }
+            80% { opacity: 0.4; transform: translateX(1px); }
+            100% { opacity: 0.7; transform: translateX(0px); }
+        }
+        
+
+        
+        /* Wiggle animation */
+        .wiggle {
+            animation: wiggle 0.3s ease-in-out;
+        }
+        
+        @keyframes wiggle {
+            0% { transform: translateX(0) translateY(0); }
+            20% { transform: translateX(5px) translateY(3px); }
+            40% { transform: translateX(-5px) translateY(-3px); }
+            60% { transform: translateX(4px) translateY(2px); }
+            80% { transform: translateX(-4px) translateY(-2px); }
+            100% { transform: translateX(0) translateY(0); }
+        }
+        
+        /* Noise effect */
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,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');
+            opacity: 0.05;
+            z-index: 98;
+            pointer-events: none;
+        }
+        
+        /* Custom cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #ff9bb8;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 103;
+            mix-blend-mode: difference;
+            box-shadow: 0 0 15px #ff9bb8, 0 0 30px #bc748b, 0 0 45px #bc748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="glitch-bg"></div>
+    <div class="overlay-image"></div>
+    <div class="noise"></div>
+    
+    <div class="frame">
+        <!-- Barbed wire corners -->
+        <div class="barbed-corner top-left"></div>
+        <div class="barbed-corner top-right"></div>
+        <div class="barbed-corner bottom-left"></div>
+        <div class="barbed-corner bottom-right"></div>
+        
+        <!-- Barbed wire along edges -->
+        <div class="barbed-top"></div>
+        <div class="barbed-bottom"></div>
+        <div class="barbed-left"></div>
+        <div class="barbed-right"></div>
+    </div>
+    
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <script>
+        // Background images array - add your images to data/imgs/ folder
+        const backgroundImages = [
+            'data/imgs/Artboard 1.jpg',
+            'data/imgs/Artboard 2.jpg',
+            'data/imgs/Artboard 3.jpg',
+            'data/imgs/Artboard 4.jpg',
+            'data/imgs/Artboard 5.jpg',
+            'data/imgs/Artboard 6.jpg',
+            'data/imgs/Artboard 7.jpg',
+            'data/imgs/Artboard 8.jpg',
+            'data/imgs/Artboard 9.jpg',
+            'data/imgs/Artboard 10.jpg',
+            'data/imgs/Artboard 11.jpg',
+            'data/imgs/Artboard 12.jpg',
+            'data/imgs/Artboard 13.jpg'
+        ];
+        
+        let currentBgIndex = 0;
+        
+        // Phrases to display
+        const phrases = [
+            ";_;",
+            "silence",
+            "connection",
+            "or am I there?",
+            "am I here?",
+            "❤❤",
+            "make it stop",
+            "where am i?",
+            "memories",
+            "get out.",
+            "please",
+            "(◉_◉)",
+            "╥﹏╥",
+            "ƸӜƷ",
+            "i see you"
+        ];
+        
+        // Background switching function
+        function switchBackground() {
+            // Get a random index different from current one
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * backgroundImages.length);
+            } while (newIndex === currentBgIndex && backgroundImages.length > 1);
+            
+            currentBgIndex = newIndex;
+            const glitchBg = document.querySelector('.glitch-bg');
+            glitchBg.style.backgroundImage = `url('${backgroundImages[currentBgIndex]}')`;
+            
+            // Add brief flash effect
+            glitchBg.style.opacity = '0.3';
+            setTimeout(() => {
+                glitchBg.style.opacity = '0.7';
+            }, 100);
+        }
+        
+        // Add click event listener for background switching
+        document.addEventListener('click', (e) => {
+            switchBackground();
+        });
+        
+        // Track mouse movement for custom cursor
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.getElementById('custom-cursor');
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+        
+        // Create a message element
+        function createMessage() {
+            const message = document.createElement('div');
+            message.className = 'message';
+            message.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+            return message;
+        }
+        
+        // Show a message at a random position
+        function showMessage() {
+            const message = createMessage();
+            document.body.appendChild(message);
+            
+            // Random position (avoid edges)
+            const x = Math.random() * (window.innerWidth - 250) + 25;
+            const y = Math.random() * (window.innerHeight - 100) + 25;
+            
+            message.style.left = `${x}px`;
+            message.style.top = `${y}px`;
+            
+            // Fade in
+            setTimeout(() => {
+                message.style.opacity = '1';
+            }, 10);
+            
+            // Add flicker effect randomly
+            if (Math.random() > 0.5) {
+                message.classList.add('flicker');
+            }
+            
+            // Remove after a while
+            setTimeout(() => {
+                message.style.opacity = '0';
+                setTimeout(() => {
+                    if (message.parentNode) {
+                        document.body.removeChild(message);
+                    }
+                }, 1000);
+            }, 3000 + Math.random() * 2000);
+        }
+        
+        // Create creative glitch lines effect
+        function createGlitchLines() {
+            const count = Math.floor(Math.random() * 8) + 3;
+            
+            for (let i = 0; i < count; i++) {
+                const line = document.createElement('div');
+                line.className = 'glitch-line';
+                
+                // Random positioning and sizing
+                const isHorizontal = Math.random() > 0.3;
+                if (isHorizontal) {
+                    line.style.top = `${Math.random() * window.innerHeight}px`;
+                    line.style.left = `${Math.random() * 50}%`;
+                    line.style.width = `${Math.random() * 60 + 20}%`;
+                    line.style.height = `${Math.random() * 4 + 1}px`;
+                } else {
+                    line.style.left = `${Math.random() * window.innerWidth}px`;
+                    line.style.top = `${Math.random() * 50}%`;
+                    line.style.width = `${Math.random() * 4 + 1}px`;
+                    line.style.height = `${Math.random() * 60 + 20}%`;
+                }
+                
+                // Random rotation and skew for more chaos
+                line.style.transform = `rotate(${Math.random() * 360}deg) skew(${Math.random() * 20}deg)`;
+                line.style.opacity = Math.random() * 0.8 + 0.2;
+                
+                document.body.appendChild(line);
+                
+                // Random flicker timing
+                const flickerDuration = Math.random() * 200 + 50;
+                setTimeout(() => {
+                    line.style.opacity = '0';
+                    setTimeout(() => {
+                        if (line.parentNode) {
+                            document.body.removeChild(line);
+                        }
+                    }, 500);
+                }, flickerDuration);
+            }
+        }
+        
+        // Wiggle the screen effect
+        function wiggleScreen() {
+            document.body.classList.add('wiggle');
+            setTimeout(() => {
+                document.body.classList.remove('wiggle');
+            }, 300);
+        }
+        
+        // Show overlay image randomly
+        function showOverlayImage() {
+            const overlay = document.querySelector('.overlay-image');
+            overlay.style.opacity = 0.7;
+            
+            setTimeout(() => {
+                overlay.style.opacity = 0;
+            }, 200); // Very brief appearance for a glitch effect
+        }
+        
+        // Start showing messages at random intervals
+        function startMessages() {
+            showMessage();
+            setTimeout(startMessages, 3000 + Math.random() * 5000);
+        }
+        
+        // Start glitch effects at random intervals
+        function startGlitches() {
+            createGlitchLines();
+            
+            if (Math.random() > 0.8) {
+                showOverlayImage();
+            }
+            
+            setTimeout(startGlitches, 100 + Math.random() * 900);
+        }
+        
+        // Start screen wiggle effect
+        function startWiggle() {
+            wiggleScreen();
+            setTimeout(startWiggle, 3000 + Math.random() * 2000);
+        }
+        
+        // Initialize everything when the page loads
+        window.addEventListener('load', () => {
+            // Load the first background image
+            const glitchBg = document.querySelector('.glitch-bg');
+            glitchBg.style.backgroundImage = `url('${backgroundImages[0]}')`;
+            
+            startMessages();
+            startGlitches();
+            startWiggle();
+            
+            // Show message on mouse movement
+            let mouseMoveTimer;
+            document.addEventListener('mousemove', () => {
+                clearTimeout(mouseMoveTimer);
+                
+                if (Math.random() > 0.93) {
+                    showMessage();
+                }
+                
+                mouseMoveTimer = setTimeout(() => {
+                    // Just to prevent too many events
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
