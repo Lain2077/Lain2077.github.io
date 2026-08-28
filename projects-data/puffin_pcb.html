@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edo's Portfolio</title>
+    <link href="/data/favicon.png" rel="icon">
+    <!-- StyleSheet -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/plyr.css" />
+	<script src="../js/functions.js"></script>
+	
+  </head>
+
+  <body class="home-main">
+	<div id="container">
+		<div id="headerArea">
+			<div id="header">
+			<h1 class="title">EDO'S VAULT</h1>
+			</div>
+			
+		<nav id="navbar" style="margin-bottom: 10px;"><ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../projects.html"><span class="icon-folder"></span>Projects</a></li>
+			<li><a href="../experiences.html"><span class="icon-folder"></span>Experiences</a></li>
+			<li><a href="../skills.html">Skills</a></li>
+			<li><a href="../about.html">About</a></li>
+		  </ul></nav></div>
+
+		<div id="flex">
+			
+			<main>
+				<div class="container">						 
+    				<div class="project-image">
+						<img src="pcb/pcb.jpg" alt="Project Image"></img>
+					  </div>
+
+					  <div class="project-info">
+						<div class="project-title-date">
+						  <h2 class="project-title">Puffin PCB</h2>
+						  <span class="project-date">[SPR 2026]</span>
+						</div>
+						<div class="project-description">
+						  <p> For my girlfriend's birthday, I wanted to make her something special and unique that would also reach her aesthethics, interests and be wearable. I've came to the idea of making a custom wearable and functional PCB in the form of a pendant.
+							<br><br> 
+							</p>
+							<h2><strong>CONCEPTION</strong></h2>
+							<p>The PCB files were made on KiCad. I had to make the custom board as small as possible, since this would end up being a pendant.
+							<br><br>
+							<div class="project-image">
+								<img src="pcb/pcb_schem.jpg" alt="Project Image"></img>
+							  </div>
+							<br>
+							As part of an energy and cost efficiency effort, LEDs were charlieplexed to use less pins, since the microcontroller used supports LOW and HIGH states.
+							<br><br>
+							Using less pins also meant less resistors. and globally less components. 3 Connectors were also used for programming. Non-Plated Holes were also included for the chain's jump rings.
+							<br><br>
+							<h2><strong>PLACEMENT & ROUTING</strong></h2>
+							<p>The charlieplexing made routing significantly more challenging. To increase the surface for routing, I opted for a 4 layers PCB, with inner layers only dedicated to charlieplexing and some minor voltages additions (Green and Orange routings).
+							<br><br>
+							To also prevent voltage drops from LEDs powering on, I decided to have two decoupling capacitors close to the MCU (AtTiny1616-m).
+							<br><br>
+							<div class="project-image">
+								<img src="pcb/pcb_routing.jpg" alt="Project Image"></img>
+							  </div>
+							<br>
+							Another major constraint was the size of the battery holder. The SMD component used was pretty much the bottleneck of how small I couldve gotten the pcb to be. The only other component located at the back of the pcb is the button used to cycle through various effects.
+							  <br><br>
+							Since assembly would be done by the manufacturer, I had to provide a valid BOM (Bill of Materials) with the exact components used, and their specifications.
+							<br><br>
+							<h2><strong>FINAL RESULT</strong></h2>
+							<div class="project-image">
+								<img src="pcb/pcb_final.jpg" alt="Project Image"></img>
+							  </div>
+					  </div>
+			</main>
+			
+		</div>
+		<footer id="footer">©Xcx_2026</footer>
+	</div>
+	<!-- THIS IS THE CSS !-->
+
+
+	<script src="../js/plyr.js"></script>
+	<script>
+	  const player = new Plyr('#player');
+	</script>
+  </body>
+</html>

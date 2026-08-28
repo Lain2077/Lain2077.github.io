@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edo's Portfolio</title>
+    <link href="/data/favicon.png" rel="icon">
+    <!-- StyleSheet -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/ism-slider.css"/>
+	<link rel="stylesheet" href="../css/plyr.css" />
+	<script src="../js/functions.js"></script>
+	<script src="../js/ism-slider.js"></script>
+	
+  </head>
+
+  <body class="home-main">
+    
+	<div id="container">
+		<div id="headerArea">
+			<div id="header">
+			<h1 class="title">EDO'S VAULT</h1>
+			</div>
+			
+		<nav id="navbar" style="margin-bottom: 10px;"><ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../projects.html"><span class="icon-folder"></span>Projects</a></li>
+			<li><a href="../experiences.html"><span class="icon-folder"></span>Experiences</a></li>
+			<li><a href="../skills.html">Skills</a></li>
+			<li><a href="../about.html">About</a></li>
+		  </ul></nav></div>
+
+		<div id="flex">			
+			<main>
+				<div class="container">
+					<div class="plyr__video-embed" id="player">
+					    <iframe
+					        src="https://player.vimeo.com/video/1163453937?h=a8880aad39"
+					        allowfullscreen
+					        allow="autoplay; fullscreen; picture-in-picture">
+					    </iframe>
+					</div>
+
+					  <div class="project-info">
+						<div class="project-title-date">
+						  <h2 class="project-title">EXOTOPIE</h2>
+						  <span class="project-date">[WIN 2025]</span>
+						</div>
+						<div class="project-description">
+						  <p>
+							Exotopie is an interactive immersive experience that took place at the legendary Agora of UQAM during the 2025 edition of LUMINO by Quartier des Spectacles. The project was a total transformation of the Agora into an extra-terrestrial landscape that the audience would see evolve throughout the night. 
+							<br><br>
+							Everything was designed to interact with other elements of the landscape to create a feel of inhabiting something alive. The waterfall along with its start would drive the evolution of the environment throughout the night along with the performers.
+							<br><br>
+							In short, Exotopie is an 8 hours timed show, 3 phases, 3 zones, 14 performers accross 9 performances and <b>a lot of love <3</b>. 
+							
+						  </p>
+						<br>
+						
+						<h2>CONTRIBUTIONS</h2>
+						<div class="experience">
+                		    <div class="experience-title" onclick="toggleDetails('1')">
+                		        <strong>1. PITCH</strong> - Unreal Previs <span class="toggle-icon">+</span>
+                		    </div>
+                		    <div class="experience-details" id="1">
+                		        <p>
+									For the project's pitch to Quartier Des Spectacles, I rebuilt the UQAM's agora to a scale of 1:1 in Unreal to showcase the immersion potential of the idea we had in mind. The previs featured NDI inputs to test different projection footages as well as UE's virtual dmx lights to pre-conceive vrious sequences.
+									<br><br>
+									The game was simply started on a computer for different members of the jury to explore the environment and give feedback on the concept. The project was greenlit and we were given the go-ahead to start production.
+									<br><br>
+									<div class="ism-slider" style="margin-left: 4%; margin-right: 4%; margin-bottom: 20px;" data-radios="false" id="previs">
+										<ol>
+										  <li>
+											<img src="exotopie/previs_1.jpg">
+										  </li>
+										  <li>
+											<img src="exotopie/previs_2.jpg">
+										  </li>
+										  <li>
+											<img src="exotopie/previs_3.jpg">
+										  </li>
+										</ol>
+									</div>
+								</p>                        
+                		    </div>            
+                		</div>
+						
+						<div class="experience">
+                		    <div class="experience-title" onclick="toggleDetails('2')">
+                		        <strong>2. WATERFALL</strong> - TD-UE Interactivity <span class="toggle-icon">+</span>
+                		    </div>
+                		    <div class="experience-details" id="2">
+                		        <p>
+									The waterfall was the core element driving the phases into which the environment was in. Several interactions between performers, lighting and the waterfall projections were occurring at any given time.
+									<br><br>
+									The workflow we opted for was a TouchDesigner controller patch that would send OSC messages to Unreal when necessary, to control the star's position, different phases materials and physics, as well as virtual DMX lights pass through to coincide with the physical lights on site.
+									<br><br>
+									
+									<div class="project-image">
+										<img src="exotopie/TD_UI2.jpg" alt="Project Image"></img>
+							 		</div>
+									<h3>Controls</h3>
+									<ul>
+										<li><b>NightStart:</b> - Start the nights sequence</li>
+										<li><b>Portals:</b> Opening Greenscreen portals on the waterfall to accomodate VJs creativity</li>
+										<li><b>Perfo Status:</b>Switching to various performers presets and gates</li>
+										<li><b>Phases:</b> Different phases of the event, Phase 3 was handled automatically via the Syncer.</li>
+										<li><b>Syncer:</b> Gradually synchronize the star position to the desired location at a given time.</li>
+									</ul>
+									<br>
+									The most useful and important part of our UI was without a doubt the Syncer. A song was made to be played along the eclipse to create a perfectly synced crescendo effect. All I had to do was to slightly adjust Unreal's sequence speedrate to delay or accelerate the timing at which the audio cue will start. 
+									<br><br>
+									TD would start the audio cue precisely 60.2 seconds before the eclipse would occur because the come-up of the songs had this exact duration before climax. The syncer guaranteed a seemless yet perfectly synced experience to something you would see evolve throughout the entire night.
+									<br><br>
+									Simple maths, yet saved us from a lot of headaches and potential mistakes.
+								</p>                        
+                		    
+							</div>            
+                		</div>
+						
+						<div class="experience">
+                		    <div class="experience-title" onclick="toggleDetails('3')">
+                		        <strong>3. NETWORK</strong> - Ubiquity Rack Setup <span class="toggle-icon">+</span>
+                		    </div>
+                		    <div class="experience-details" id="3">
+                		        <p>For deployment, several machines would talk to each other to send crucial informations for coherence and synchronization. This includes phase changes, audio cues, colors, performers influence on the waterfall etc.
+									I managed the network setup and configuration of the Ubiquity rack and the data flow infrastructure of every informations we were flying around.
+									<br><br>
+									<h3>Rack:</h3>
+									<div class="project-image">
+										<img src="exotopie/rack.jpg" alt="Project Image"></img>
+							 		</div>
+									The rack was composed of a Ubiquity Dream Machine SE with a wireless AP, as well as another switch to accomodate the Dante infrastructure.
+									<br>
+									<h3>Data transmission technical table:</h3>
+									<div class="project-image">
+										<img src="exotopie/networkinfo.jpg" alt="Project Image"></img>
+							 		</div>
+								</p>                        
+							</div>      
+                		</div>
+						
+						<h2>RECAP</h2>
+						<div class="plyr__video-embed" id="player1">
+					    	<iframe
+					    	    src="https://player.vimeo.com/video/1164057972?h=6ad0ef1cd6"
+					    	    allowfullscreen
+					    	    allow="autoplay; fullscreen; picture-in-picture">
+					    	</iframe>
+						</div>   
+						<br>  
+						<h4>More info at <a href="https://exotopie.uqam.ca/info" target="_blank">https://exotopie.uqam.ca/info</a></h4>
+						</div>
+						<div class="project-learnings">
+						  <h3>Features used:</h3>
+						  <ul> 
+							<h3>Unreal Engine:</h3>
+							<ul>
+							<li>Custom DMX Fixtures</li>
+							<li>Realtime material modifications</li>
+							<li>OSC and DMX reception</li>
+							<li>Compilation optimizations</li>
+							</ul>
+							<br>
+							<h3>TouchDesigner:</h3>
+							<ul>
+							<li>Complex UI development</li>
+							<li>Various show-foolproofing solutions</li>
+							<li>Layer-heavy composition and mapping</li>
+							</ul>
+							<br>
+							<h3>Blender:</h3>
+							<ul>
+							<li>1:1 scale modeling workflow</li>
+							<li>Blender-UE Bridge</li>
+							</ul>
+						</ul>
+						</div>
+					  </div>
+			</main>
+			
+		</div>
+		<footer id="footer">©Xcx_2026</footer>
+	</div>
+
+	<script src="../js/plyr.js"></script>
+	<script>
+	  const player = new Plyr('#player');
+	  const player1 = new Plyr('#player1');
+	</script>
+  </body>
+</html>

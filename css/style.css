@@ -54,16 +54,6 @@ the images as variables */
 /*
 /*     /* . . . . . . . . . . . . . . . . */        
 /*}
-
-/* if you have the URL of a font, you can set it below */
-/* feel free to delete this if it's not your vibe */
-
-/* this seems like a lot for just one font and I would have to agree 
-but I wanted to include an example of how to include a custom font.
-If you download a font file you can upload it onto your Neocities
-and then link it! Many fonts have separate files for each style
-(bold, italic, etc. T_T) which is why there are so many!
-
 */
 
 @font-face {
@@ -105,6 +95,7 @@ body {
     background-color: black;
     /* you can delete the line below if you'd prefer to not use an image */
     background-size: 125px;
+    background-repeat: repeat;
     color: #d2738a;
     background-image: var(--body-bg-image);
     filter: saturate(1)
@@ -126,8 +117,7 @@ before and after the text */
 the other elements, you will need to move that div outside
 of the container */
 #container {
-    max-width: 1300px;
-    /* this is the width of your layout! */
+    max-width: 1300px;  /* width of layout! */
     /* if you change the above value, scroll to the bottom
 and change the media query according to the comment! */
     margin: 0 auto;
@@ -393,10 +383,7 @@ hr {
 
 /* BELOW THIS POINT IS MEDIA QUERY */
 
-/* so you wanna change the width of your page? 
-by default, the container width is 900px.
-in order to keep things responsive, take your new height,
-and then subtrack it by 100. use this new number as the 
+/*
 "max-width" value below
 */
 
@@ -409,10 +396,7 @@ and then subtrack it by 100. use this new number as the
         width: 100%;
     }
 
-    /* the order of the items is adjusted here for responsiveness!
-since the sidebars would be too small on a mobile device.
-feel free to play around with the order!
-*/
+    /*order of the items*/
     main {
         order: 1;
     }
@@ -679,11 +663,34 @@ feel free to play around with the order!
 }
 
 .intro-qualities {
-    flex: 1 1 35%;
-    border: 1px solid var(--color-highlight);
-    padding: 20px;
-    border-radius: 8px;
-    background-color: black;
+  flex: 1 1 35%;
+  border: 1px solid var(--color-highlight);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: black;
+}
+
+/* Device cards grid for project pages */
+.devices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.device-card {
+  border: 1px solid var(--color-highlight);
+  border-top: 3px solid var(--color-main);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .devices-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .intro-qualities h2 {

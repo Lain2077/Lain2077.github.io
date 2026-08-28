@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edo's Portfolio</title>
+    <link href="/data/favicon.png" rel="icon">
+    <!-- StyleSheet -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/plyr.css" />
+	<script src="../js/functions.js"></script>
+	<script src="../js/scramble.js" defer></script>
+  </head>
+  
+  <body class="home-main">
+	<div id="container">
+		<div id="headerArea">
+			<div id="header">
+			<h1 class="title">EDO'S VAULT</h1>
+			</div>
+			
+		<nav id="navbar" style="margin-bottom: 10px;"><ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../projects.html"><span class="icon-folder"></span>Projects</a></li>
+			<li><a href="../experiences.html"><span class="icon-folder"></span>Experiences</a></li>
+			<li><a href="../skills.html">Skills</a></li>
+			<li><a href="../about.html">About</a></li>
+		  </ul></nav></div>
+
+		<div id="flex">
+			
+			<main>
+				<div class="container">						 
+    				<div class="project-image">
+						<img src="homelab/flow.jpg" alt="Project Image"></img>
+					  </div>
+
+					  <div class="project-info">
+						<div class="project-title-date">
+						  <h2 class="project-title">MAGI - Homelab</h2>
+						  <span class="project-date">[2026]</span>
+						</div>
+						<div class="project-description">
+						  <p> Internet-accessible home server with a variety of tools and services I use daily. The local setup is comprised of 3 devices, and an Oracle Cloud instance handles public domains access forwarding, authentication and security.
+							<br>
+							<br> 
+							
+							<b>In a world where you are less valuable than the data
+							you produce, owning it is what gives you back your digital freedom.</b> 
+							</p>
+<h2><strong>DEVICES</strong></h2>
+
+<div class="devices-grid">
+  <div class="device-card">
+    <h2 style="color: #FF0000">0.0 Oracle Cloud Instance</h2>
+    <ul>
+      <li>Crowdsec monitors Nginx logs for potential threats, including layer 7 DDOS attacks</li>
+	  <br>
+      <li>Authelia provides OIDC to applications supporting it, and forward auth for those that don't</li>
+      <br>
+	  <li>Certbot automatically renews SSL certificates</li>
+      <br> 
+	  <li>Nginx proxies to the backend services via Tailscale to avoid port openings on my network</li>
+    </ul>
+  </div>
+
+  <div class="device-card">
+    <h2 style="color: #6666FF">1.0 ADAM (NAS)</h2>
+    <p>Synology DS216j</p>
+    <ul>
+      <li>2 bays NAS mounted via NFS to both local devices</li>
+	  <br>
+      <li>Stores contents and databases of services</li>
+	  <br>
+      <li>Home Assistant backups</li>
+	  <br>
+	  <li>RAID 1 Configuration (identical copies) </li>
+    </ul>
+  </div>
+
+  <div class="device-card">
+    <h2 style="color: #FF33FF">2.0 LILITH (Main Server)</h2>
+    <p>Raspberry Pi 5 8GB RAM</p>
+    <ul>
+      <li>36 Containers accross 4 stacks</li>
+	  <br>
+      <li>Clouds, Utilities, and other services</li>
+	  <br>
+      <li>Config files and scripts</li>
+    </ul>
+  </div>
+
+  <div class="device-card">
+    <h2 style="color: #00FFFF">3.0 URIEL (Home Assistant)</h2>
+    <p>Raspberry Pi 4b 4GB RAM</p>
+    <ul>
+      <li>Ease of life home management</li>
+	  <br>
+      <li>Camera system</li>
+	  <br>
+      <li>Centralied reminders and household schedules</li>
+    </ul>
+  </div>
+</div>
+							
+							<h2><strong>TECHNICAL DETAILS</strong></h2>
+							<div class="device-card">
+							<h3>SECURITY</h3>
+							<ul>
+      							<li>Domains mostly hit Oracle Cloud Instance first.</li>
+      							<li>Refraining home server from direct internet access.</li>
+      							<li>Every internet-opened services are TOTP secured (2FA).</li>
+								<li>Crowdsec filters out most common and noisy bot threats.</li>
+   							</ul>
+							</div>
+							<br>
+							<div class="device-card">
+							<h3>HARDWARE & NETWORK</h3>
+							<ul>
+      							<li>Total peak consumption of 50 watts.</li>
+								<li>UPS to handle graceful shutdowns during power outages.</li>
+      							<li>Everything CAT 6 Connected with no local bottlenecks.</li>
+   							</ul>
+							</div>
+							<br>
+							<div class="device-card">
+							<h3>MAINTENANCE</h3>
+							<ul>
+      							<li>Dashboard to monitor the health of all services.</li>
+      							<li>Weekly backups of all important data from servers.</li>
+      							<li>Regular individual image pullings via portainer.</li>
+   							</ul>
+							</div>
+					  </div>
+			</main>
+			
+		</div>
+		<footer id="footer">©Xcx_2026</footer>
+	</div>
+	<!-- THIS IS THE CSS !-->
+
+
+	<script src="../js/plyr.js"></script>
+	<script>
+	  const player = new Plyr('#player');
+	</script>
+  </body>
+</html>
