@@ -102,8 +102,9 @@
 				<hr>
 				<div class="centered-view-counter">
 					<p>TOTAL VISITS:&#160;</p>
-					<div><a><img class="view-counter" src='https://www.counter12.com/img-Db6xA191bYy5W6ZW-39.gif' alt='counter'></a></div>
-				  </div>
+					<!---<div><a><img class="view-counter" src='https://www.counter12.com/img-Db6xA191bYy5W6ZW-39.gif' alt='counter'></a></div>
+				--->  
+				</div>
 			</main>
 			
 		</div>
@@ -114,17 +115,72 @@
 	</div>
 	<script type="text/javascript"  src="js/sparkles.js" async></script>
 
-	<!-- Email popup -->
+		<!-- Contact popup -->
 	<div id="emailPopup" class="popup-overlay">
-		<div class="popup-dialog" style="max-width: 480px; width: 100%;">
-			<div class="popup-title">// contact</div>
+		<div class="popup-dialog" style="max-width: 520px; width: 100%;">
+			<div class="popup-title">// contact
+				<button class="popup-close" onclick="closePopup('emailPopup')" aria-label="Close">✕</button>
+			</div>
 			<div class="popup-body">
-				<span style="display: block; font-size: 1.1em; color: var(--color-highlight); letter-spacing: 1px; margin-bottom: 14px; user-select: all;">mail@edoxcx.dev</span>
-				<a class="popup-link" href="mailto:mail@edoxcx.dev">open in mail client</a>
-				<button class="popup-close" onclick="closePopup('emailPopup')">close</button>
-				<div style="clear: both;"></div>
+				<form id="contact-form">
+					<label for="to_email">To</label>
+					<br>
+					<input type="email" id="to_email" name="to_email" value="mail@edoxcx.dev" readonly>
+
+					<label for="user_email">From</label>
+					<input type="email" id="user_email" name="user_email" placeholder="Your Email" required>
+
+					<label for="message">Message</label>
+					<textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+					<button id="submitEmail" class="popup-send">SEND</button>
+				</form>
 			</div>
 		</div>
 	</div>
-  </body>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script type="text/javascript">
+		
+		const emailInput = document.getElementById('user_email');
+
+		// Se déclenche lorsque le navigateur valide le formulaire
+		emailInput.addEventListener('invalid', function (event) {
+		    if (emailInput.validity.typeMismatch || emailInput.validity.valueMissing) {
+		        // Remplacez ce texte par ce que vous voulez afficher
+		        emailInput.setCustomValidity("Enter a valid email!");
+		    }
+		});
+		
+		// Réinitialise la validation dès que l'utilisateur tape à nouveau
+		emailInput.addEventListener('input', function () {
+		    emailInput.setCustomValidity("");
+		});
+		
+		emailjs.init("kYbai_etkzYNpDbbv");
+
+		const contactForm = document.getElementById('contact-form');
+		if (contactForm) {
+			contactForm.addEventListener('submit', function (event) {
+				event.preventDefault();
+
+				const sendBtn = document.getElementById('submitEmail');
+				const originalText = sendBtn.textContent;
+				sendBtn.textContent = 'Sending...';
+				sendBtn.disabled = true;
+
+				emailjs.sendForm('service_ugyxi8i', 'template_4yi23ff', this)
+					.then(() => {
+						sendBtn.textContent = 'Sent!';
+						this.reset();
+						setTimeout(() => { sendBtn.textContent = originalText; sendBtn.disabled = false; }, 2000);
+					}, (error) => {
+						console.error('EmailJS error:', error);
+						sendBtn.textContent = 'Failed — try again';
+						sendBtn.disabled = false;
+						setTimeout(() => { sendBtn.textContent = originalText; }, 3000);
+					});
+			});
+		}
+	</script></body>
 </html>

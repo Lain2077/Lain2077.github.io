@@ -18,8 +18,53 @@ the images as variables */
 }
 
 
-  
+input {
+    color: var(--color-main);
+    background: none;
+    border: 3px solid var(--color-main);
+    font-family: 'Nerd', sans-serif;
+    display: block;
+    width: 100%;
+    max-width: 700px; /* Limite la largeur pour permettre le centrage */
+    margin: 0 auto;   /* Centre l'élément horizontalement */
+    font-size: 18px;    /* Augmente la taille du texte tapé et du placeholder */
+    padding: 10px 15px; /* 15px en haut/bas et 20px à gauche/droite pour plus d'espace */
+    margin-top: 10px; /* Ajoute un espace au-dessus de l'input */
+    margin-bottom: 10px; /* Ajoute un espace en dessous de l'input */
+}
 
+textarea {
+    color: var(--color-main);
+    background: none;
+    border: 3px solid var(--color-main);
+    font-family: 'Nerd', sans-serif;
+    display: block;
+    width: 100%;
+    max-width: 700px; /* Limite la largeur pour permettre le centrage */
+    margin: 0 auto;   /* Centre l'élément horizontalement */
+    resize: none;
+    height: 400px;
+    font-size: 18px;    /* Augmente la taille du texte tapé et du placeholder */
+    padding: 10px 15px; /* 15px en haut/bas et 20px à gauche/droite pour plus d'espace */
+    margin-top: 10px; /* Ajoute un espace au-dessus de l'input */
+    margin-bottom: 10px; /* Ajoute un espace en dessous de l'input */
+}
+
+#submitEmail {
+    font-family: 'Nerd', sans-serif;
+                    font-size: 20px;
+                    color: var(--color-main);
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border: solid var(--color-main) 3px;
+                    float: right;
+                    cursor: pointer;
+                    display: block;
+                    width: 100%;
+    max-width: 700px; /* Limite la largeur pour permettre le centrage */
+    margin: 0 auto;   /* Centre l'élément horizontalement */
+    margin-top: 10px; /* Ajoute un espace au-dessus de l'input */
+    margin-bottom: 10px; /* Ajoute un espace en dessous de l'input */
+                }
 /*@media (min-width: 900px) {
 /*    ::-webkit-scrollbar {
 /*        width: 15px;
