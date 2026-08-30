@@ -8,8 +8,23 @@
     <!-- StyleSheet -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 	<script src="js/functions.js" defer></script>
-	<script src="js/wobble.js" defer></script>
+	<script src="js/wobble.js"></script>
 	<script src="js/sparkles.js" defer></script>
+	
+	<!-- collectibles.js -->
+    <link rel="stylesheet" type="text/css"  href="js/collectibles/collectibles.min.css">
+    <script src="js/collectibles/collectibles.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            new CollectiblesJS({
+                itemVersion: 1,
+                persistent: true,
+                numItems: 5,
+                theme: "coins"
+            });
+        });
+    </script>
+	
   </head>
 
   <script type="text/javascript">
@@ -50,7 +65,7 @@
 					<br>
 					<br>
 					Here you can find any information about my skills and how I spend my time. 
-					<br> <strong>Feel free to explore every corner! </strong>There is hidden gems to gather accross the whole website.
+					<br> <strong>Feel free to explore every corner! </strong>There is hidden gems to gather accross the whole website like these -->&nbsp;&nbsp;<span data-keyid="0" class="collectible-item" data-key="8018d6f99df54784d559ba3156a421fc6a29d64ad5732532c4e0722cd0dd88d2b2ce78b12602c39b794ab0d3d8e5475fd52a4373606839f8e7d5c006bc67fafc586"></span>
 					<br> This home page hosts my socials and some friends/colleagues of mine.
 				<br><strong>(〃＞＿＜;〃))</strong>
 				<br>
@@ -62,7 +77,7 @@
 						<a href="https://instagram.com/edo_xcx" target="_blank"><span class="icon-socials"></span></a>
 						<a href="https://github.com/Lain2077" target="_blank"><span class="icon-socials"></span></a>
 						<a href="https://facebook.com/edo.xcx" target="_blank"><span class="icon-socials"></span></a>
-						<a href="mailto:mail@edoxcx.dev"><span class="icon-socials"></span></a>
+						<a href="#" onclick="openPopup('emailPopup'); return false;"><span class="icon-socials"></span></a>
 					</div>
 				</div>
 				
@@ -99,5 +114,18 @@
 		"In the Large Magellanic Cloud rests a colossal red empress, veiled in drifting dust, her luminous heart outshining lesser stars."
 	</div>
 	<script type="text/javascript"  src="js/sparkles.js" async></script>
+
+	<!-- Email popup -->
+	<div id="emailPopup" class="popup-overlay">
+		<div class="popup-dialog" style="max-width: 480px; width: 100%;">
+			<div class="popup-title">// contact</div>
+			<div class="popup-body">
+				<span style="display: block; font-size: 1.1em; color: var(--color-highlight); letter-spacing: 1px; margin-bottom: 14px; user-select: all;">mail@edoxcx.dev</span>
+				<a class="popup-link" href="mailto:mail@edoxcx.dev">open in mail client</a>
+				<button class="popup-close" onclick="closePopup('emailPopup')">close</button>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
   </body>
 </html>

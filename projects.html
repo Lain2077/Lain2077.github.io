@@ -14,6 +14,21 @@
 		  filterItems('all');
 		});
 	  </script>
+
+    <!-- collectibles.js -->
+    <link rel="stylesheet" type="text/css"  href="js/collectibles/collectibles.min.css">
+    <script src="js/collectibles/collectibles.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            new CollectiblesJS({
+                itemVersion: 1,
+                persistent: true,
+                numItems: 5,
+                theme: "coins"
+            });
+        });
+    </script>
+
 </head>
 
   <body class="home-main">
@@ -198,7 +213,7 @@
 			</main>
 			
 		</div>
-		<footer id="footer">©Xcx_2026</footer>
+		<footer id="footer">©Xcx_2026 <span data-keyid="1" class="collectible-item" data-key="802a3c1b2f5f3dfcaf1b289cb1c98f4340b03dc896a4be1ee7c85594e6173f6d61ba99da36533e6ae87cd987050319b1ad8570f9f3d2a23c8ac7576a13a3c6246a2"></span></footer>
 	</div>
 	<!-- THIS IS THE CSS !-->
 

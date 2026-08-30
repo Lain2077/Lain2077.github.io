@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALWAYS</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #080A0F;
+    --ink: #E8EAF0;
+    --ink-dim: rgba(232,234,240,0.62);
+    --accent: rgb(188, 116, 139);
+    --display: 'Space Grotesk', sans-serif;
+    --mono: 'DM Mono', monospace;
+    --pad: clamp(20px, 6vw, 64px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  body {
+    font-family: var(--mono);
+    font-weight: 300;
+  }
+
+  /* ── Title banner ─────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: clamp(120px, 22vw, 220px);
+    overflow: hidden;
+  }
+
+  #titleCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ── Page content ─────────────────────────────────────────────── */
+  main {
+    max-width: 72ch;
+    margin: 0 auto;
+    padding: clamp(8px, 2vw, 16px) var(--pad) clamp(60px, 10vw, 100px);
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.6em;
+  }
+
+  .prose {
+    font-size: clamp(0.95rem, 1.1vw + 0.6rem, 1.15rem);
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+    color: var(--ink-dim);
+  }
+
+  .word { display: inline-block; }
+
+  .letter {
+    display: inline-block;
+    color: var(--ink);
+    text-shadow: 0 0 0.15em currentColor;
+    transform:
+      translate(var(--x-offset, 0px), var(--y-offset, 0px))
+      scale(var(--scale, 1));
+  }
+
+  @media (max-width: 560px) {
+    .hero { height: clamp(90px, 30vw, 140px); }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <canvas id="titleCanvas"></canvas>
+  </header>
+  <main>
+    <span class="eyebrow">OWN WHAT YOU CREATE - DESTROY WHAT THEY OWN</span>
+    <div class="prose" id="prose"></div>
+  </main>
+<script>
+  // ─── Title canvas: "ALWAYS" rendered as a breathing particle field,
+  // left-aligned to match the content column below it. ──────────────
+  (function () {
+    const canvas = document.getElementById('titleCanvas');
+    const ctx = canvas.getContext('2d');
+    const WORD = 'EXIST';
+    let points = [];
+    let raf = null;
+
+    function leftInset() {
+      // Match the horizontal padding used by <main>, so the title
+      // lines up with the paragraph text underneath it.
+      const main = document.querySelector('main');
+      const cs = getComputedStyle(main);
+      return parseFloat(cs.paddingLeft) || 24;
+    }
+
+    function sizeCanvas() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = Math.round(rect.width);
+      canvas.height = Math.round(rect.height);
+    }
+
+    function sampleText(density = 4) {
+      const off = document.createElement('canvas');
+      off.width = canvas.width;
+      off.height = canvas.height;
+      const octx = off.getContext('2d');
+      const pad = leftInset();
+      // Same sizing formula as the original (min of height-based and
+      // width-based caps), just left-aligned instead of centered so it
+      // lines up with the padding of <main>.
+      const fs = Math.min(canvas.height * 0.42, (canvas.width - pad) / WORD.length * 1.6, 150);
+      octx.font = `700 ${fs}px "Space Grotesk", sans-serif`;
+      octx.textAlign = 'left';
+      octx.textBaseline = 'middle';
+      octx.fillStyle = '#fff';
+      octx.fillText(WORD, pad, canvas.height / 2);
+
+      const { data } = octx.getImageData(0, 0, off.width, off.height);
+      const pts = [];
+      for (let y = 0; y < off.height; y += density) {
+        for (let x = 0; x < off.width; x += density) {
+          if (data[(y * off.width + x) * 4 + 3] > 128) pts.push({ x, y });
+        }
+      }
+      return pts;
+    }
+
+    function spring2D(s, tx, ty, k = 0.08, d = 0.75) {
+      s.vx += (tx - s.x) * k; s.vx *= d; s.x += s.vx;
+      s.vy += (ty - s.y) * k; s.vy *= d; s.y += s.vy;
+    }
+
+    function rebuild() {
+      sizeCanvas();
+      const pts = sampleText();
+      const cx = canvas.width / 2, cy = canvas.height / 2;
+      points = pts.map(o => ({
+        x: o.x, y: o.y, vx: 0, vy: 0, ox: o.x, oy: o.y,
+        phase: Math.hypot(o.x - cx, o.y - cy) * 0.012,
+      }));
+    }
+
+    let t = 0;
+    function frame() {
+      t += 0.018;
+      ctx.fillStyle = '#080A0F';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      const cx = canvas.width / 2, cy = canvas.height / 2;
+      points.forEach(p => {
+        const breathe = Math.sin(t + p.phase) * 14;
+        const dx = p.ox - cx, dy = p.oy - cy;
+        const dist = Math.hypot(dx, dy) || 1;
+        spring2D(p, p.ox + (dx / dist) * breathe, p.oy + (dy / dist) * breathe, 0.12, 0.72);
+        const alpha = 0.45 + Math.abs(Math.sin(t + p.phase)) * 0.4;
+        ctx.fillStyle = `rgba(165, 93, 119,${alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      raf = requestAnimationFrame(frame);
+    }
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(rebuild, 150);
+    });
+
+    rebuild();
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(frame);
+  })();
+
+  // ─── Body text: letters wobble with simplex-ish noise and swell
+  // near the cursor. ────────────────────────────────────────────────
+  (async function () {
+    const { createNoise2D } = await import('https://esm.sh/simplex-noise@4.0.0');
+    const noise2D = createNoise2D();
+
+    const SPATIAL_FREQ = 0.2;
+    const TEMPORAL_SPEED = 0.0005;
+    const AMPLITUDE = 2;
+    const OFFSET = 100;
+    const MAX_RADIUS = 90;
+
+    const TEXT = `The machine feeds us 
+and clothes us 
+and houses us
+Through it we speak to one another
+Through it we see one another
+In it we have our being
+The machine is the friend of ideas
+and the enemy of superstition
+The machine is omnipotent, eternal;
+Blessed is the machine
+You remember nothing from the machine
+The machine remembers everything from you.`;
+
+    // Split on manual line breaks first, then words within each line —
+    // a real <br> is inserted between lines since plain '\n' collapses
+    // to a space in HTML.
+    const prose = document.getElementById('prose');
+    const fragment = document.createDocumentFragment();
+    const lines = TEXT.split('\n');
+
+    lines.forEach((line, lineIndex) => {
+      const words = line.split(' ');
+      words.forEach((word, index) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'word';
+        for (const char of word) {
+          const letterSpan = document.createElement('span');
+          letterSpan.className = 'letter';
+          letterSpan.textContent = char;
+          wordSpan.appendChild(letterSpan);
+        }
+        fragment.appendChild(wordSpan);
+        if (index < words.length - 1) fragment.appendChild(document.createTextNode(' '));
+      });
+      if (lineIndex < lines.length - 1) fragment.appendChild(document.createElement('br'));
+    });
+    prose.appendChild(fragment);
+
+    let mouseX = -9999, mouseY = -9999;
+    window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+    window.addEventListener('mouseleave', () => { mouseX = -9999; mouseY = -9999; });
+    window.addEventListener('touchmove', e => {
+      if (e.touches[0]) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; }
+    }, { passive: true });
+
+    const spans = [...prose.querySelectorAll('.letter')];
+    const startTime = performance.now();
+
+    const draw = (now) => {
+      const t = (now - startTime) * TEMPORAL_SPEED;
+      spans.forEach((span, i) => {
+        const rect = span.getBoundingClientRect();
+        const a = Math.abs(rect.top + rect.height / 2 - mouseY);
+        const b = Math.abs(rect.left + rect.width / 2 - mouseX);
+        const c = Math.sqrt(a * a + b * b);
+        const distance = Math.min(c, MAX_RADIUS);
+        const delta = MAX_RADIUS - distance;
+        const scale = 1 + Math.pow(delta / MAX_RADIUS, 2) * 0.5;
+
+        const nX = noise2D(i * SPATIAL_FREQ, t);
+        const nY = noise2D(OFFSET + i * SPATIAL_FREQ, t);
+
+        span.style.setProperty('--scale', scale);
+        span.style.setProperty('--x-offset', `${nX * AMPLITUDE}px`);
+        span.style.setProperty('--y-offset', `${nY * AMPLITUDE}px`);
+      });
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  })();
+</script>
+</body>
+</html>

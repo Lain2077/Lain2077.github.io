@@ -8,7 +8,23 @@
     <!-- StyleSheet -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 	<script src="js/functions.js" defer></script>
-  </head>
+    
+    <!-- collectibles.js -->
+    <link rel="stylesheet" type="text/css"  href="js/collectibles/collectibles.min.css">
+    <script src="js/collectibles/collectibles.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            new CollectiblesJS({
+                itemVersion: 1,
+                persistent: true,
+                numItems: 5,
+                theme: "coins"
+            });
+        });
+    </script>
+
+
+</head>
 
   <body class="home-main">
     
@@ -61,7 +77,9 @@
                     </div>
                     <div class="experience-details" id="exp5">
                         <p class="experience-date"><em>[WIN 2026]</em></p>
-                        <p>Sync Licensing Contract for the show <a href="https://www.seriesplus.com/emissions/annie-joey/" target="_blank">Annie & Joey</a>, directed by Julie Hivon. 3 tracks total for an approximate 5 minutes usage total.</p>                        
+                        <p>Sync Licensing Contract for the show <a href="https://www.seriesplus.com/emissions/annie-joey/" target="_blank">Annie & Joey</a>, directed by Julie Hivon. 3 tracks total for an approximate 5 minutes usage total.
+                        <span data-keyid="2" class="collectible-item" data-key="8036a5c67ff8ad6c2de7d6b5edda51dadc01c7c66fc0d075506bfff5a0748e1fc6d4c6f8f6b4e1ccc0d57cc19df1347246f672fb7ebdf7d770f66dcbac1f04b2036"></span>
+                        </p>                        
                     </div>            
                 </div>
 

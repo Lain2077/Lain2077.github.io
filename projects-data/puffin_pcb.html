@@ -10,6 +10,20 @@
 	<link rel="stylesheet" href="../css/plyr.css" />
 	<script src="../js/functions.js"></script>
 	
+	<!-- collectibles.js -->
+    <link rel="stylesheet" type="text/css"  href="../js/collectibles/collectibles.min.css">
+    <script src="../js/collectibles/collectibles.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            new CollectiblesJS({
+                itemVersion: 1,
+                persistent: true,
+                numItems: 5,
+                theme: "coins"
+            });
+        });
+    </script>
+	
   </head>
 
   <body class="home-main">
@@ -68,7 +82,7 @@
 							  <br><br>
 							Since assembly would be done by the manufacturer, I had to provide a valid BOM (Bill of Materials) with the exact components used, and their specifications.
 							<br><br>
-							<h2><strong>FINAL RESULT</strong></h2>
+							<h2><strong>FINAL RESULT</strong>&nbsp;<p data-keyid="3" class="collectible-item" data-key="8047aae876b6c0e24a35d5f4164e89a591f1b9d7b7a7c0f8884d069c90820036c4a23a6ab12d7086ecde33062b832568017afbef0ff70ae84748cea4bb39faadbad"></p></h2> 
 							<div class="project-image">
 								<img src="pcb/pcb_final.jpg" alt="Project Image"></img>
 							  </div>

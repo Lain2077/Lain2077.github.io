@@ -15,6 +15,21 @@
 	 <link rel="stylesheet" type="text/css"  href="js/collectibles/collectibles.css">
 	 <script src="js/collectibles/collectibles.js"></script>
 
+	 <!-- collectibles.js -->
+    <link rel="stylesheet" type="text/css"  href="js/collectibles/collectibles.min.css">
+    <script src="js/collectibles/collectibles.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            new CollectiblesJS({
+                itemVersion: 1,
+                persistent: true,
+                numItems: 5,
+                theme: "coins"
+            });
+        });
+    </script>
+	 
+	 
   </head>
 
   <script type="text/javascript">
@@ -41,7 +56,7 @@
 			<main>
 					<div class="about-container">
 					  <div class="about-text">
-						<h2>About Me</h2>
+						<h2>About Me <span data-keyid="4" class="collectible-item" data-key="80572d7ab70d64deaf7236773d4b5f94095ad4b47c06bf1f170592be8af88aa4181c8073dc100f41d29ee83ba204fd3cd07543682eeda2bacb36f7c1daa6d67f342"></span> </h2>
 						<p>
 							Hi! I'm Edo, graduate of Interactive Media at UQAM. I arrived in Montreal at a very young age. It's the city I consider my roots. <br> <br>
 							Like many others, I don’t exactly know what I want to do for the rest of my life, but I’m open to wherever I land, as long as the people around me are kind and considerate. Coming from a cinema background, I wasn’t sure if Interactive Media would align with my interests upon entering the program, but I quickly realized that what matters to me is learning new things. Interactive Media combines many of my passions, making it a good fit for who I am. <br> <br>

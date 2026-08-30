@@ -8,7 +8,23 @@
     <!-- StyleSheet -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 	<script src="js/functions.js" defer></script>
-  </head>
+    
+    <!-- collectibles.js -->
+    <link rel="stylesheet" type="text/css"  href="js/collectibles/collectibles.min.css">
+    <script src="js/collectibles/collectibles.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            new CollectiblesJS({
+                itemVersion: 1,
+                persistent: true,
+                numItems: 5,
+                theme: "coins"
+            });
+        });
+    </script>
+
+
+</head>
 
   <body class="home-main">
     

@@ -34,3 +34,19 @@ function toggleDetails(id) {
         icon.textContent = "+";
     }
 }
+
+function openPopup(id) {
+    document.getElementById(id).style.display = 'flex';
+}
+
+function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.popup-overlay').forEach(function (overlay) {
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closePopup(overlay.id);
+        });
+    });
+});
